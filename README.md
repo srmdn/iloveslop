@@ -75,6 +75,13 @@ It needs Node 20 or newer and a Chrome or Chromium binary. Nothing else.
 
 This site scores 94/100, and the two misses are named in `AUDIT.md`.
 
+## Security
+
+- No telemetry, no upload, no account. The page is loaded the way your own browser would load it and nothing is sent anywhere.
+- Chrome keeps its sandbox when `slopcheck` runs as a normal user. It only passes `--no-sandbox` when the checker itself runs as root, because Chrome cannot start otherwise. `SLOPCHECK_NO_SANDBOX=1` forces it off.
+- Treat it like opening a link: only point it at pages you would open yourself.
+- One dependency, `puppeteer-core`, no postinstall script, no bundled browser download.
+
 ## How the score works
 
 Each of the 33 rules is worth 3 points, and shipping at all is worth 1. That is 100. A build is finished at 90 or higher, which means at most three rules may be skipped, and each skip has to be named.

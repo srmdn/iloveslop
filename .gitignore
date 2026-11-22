@@ -1,3 +1,26 @@
+# dependencies
 node_modules/
-.DS_Store
+
+# local env and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+.npmrc
+
+# build output and caches
+dist/
+build/
+coverage/
+.cache/
+tmp/
+*.tgz
 *.log
+
+# editors and os
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -20,7 +20,7 @@
     "check:self": "node bin/slopcheck.js ./docs/index.html"
   },
   "dependencies": {
-    "puppeteer-core": "^24.0.0"
+    "puppeteer-core": "^25.18.1"
   },
   "engines": {
     "node": ">=20"

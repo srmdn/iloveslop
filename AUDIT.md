@@ -2,7 +2,7 @@
 
 The landing page at `docs/index.html` is the demo. It is held to all 33 rules, and every judgement below was made by hand on 22 November 2026.
 
-Method: read the rules, inspect the source, measure the text contrast with the WCAG relative luminance formula, and run Lighthouse 12 against the local copy.
+Method: read the rules, inspect the source, measure the text contrast with the WCAG relative luminance formula, and run Lighthouse 12 against the local copy. The same number now comes out of `npx github:srmdn/iloveslop ./docs/index.html`, which applies the rules to the rendered page. Where the two disagree, the note says so: the tool marks R32 n/a because it does not bundle Lighthouse, and it marks R30 pass on the focus half of the rule alone.
 
 Result: **94/100**. 31 of 33 rules satisfied, plus the shipping bonus. Two rules missed, both named below.
 

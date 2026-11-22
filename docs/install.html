@@ -72,7 +72,7 @@ mkdir -p .cursor/skills && cp -r iloveslop/skills/* .cursor/skills/</code></pre>
 
   <section>
     <h2>Scoring 🧮</h2>
-    <p>Each of the 33 rules is worth 3 points, and shipping at all is worth 1. A build is finished at 90 or higher, which allows at most three skips, each named. No CLI checks it yet, so the agent reports the number and attaches evidence. The hand audit of this site is in <a href="https://github.com/srmdn/iloveslop/blob/main/AUDIT.md">AUDIT.md</a>.</p>
+    <p>Each of the 33 rules is worth 3 points, and shipping at all is worth 1. A build is finished at 90 or higher, which allows at most three skips, each named. The hand audit of this site is in <a href="https://github.com/srmdn/iloveslop/blob/main/AUDIT.md">AUDIT.md</a>, and the automated score matches it.</p>
 <pre><code>slop score: 94/100
 31 of 33 rules, plus the shipping bonus
 missed: R24, R29
@@ -80,8 +80,12 @@ evidence: lighthouse accessibility 91, audit table in AUDIT.md</code></pre>
   </section>
 
   <section class="notice">
-    <h2>Honest note 🫡</h2>
-    <p>There is no <code>npx iloveslop</code> yet. Release one is the rulebook, the direction file, five skills, and this site. A score checker is the next thing, and it will only exist if the rulebook holds up on its own first.</p>
+    <h2>Check a page 🤖</h2>
+    <p>The scorer ships with the rulebook. It opens the page in Chrome, reads the computed styles, and applies all 33 rules. Node 20 or newer, nothing else.</p>
+<pre><code>npx github:srmdn/iloveslop https://srmdn.github.io/iloveslop/
+npx github:srmdn/iloveslop ./docs/index.html</code></pre>
+    <p>Flags: <code>--json</code>, <code>--quiet</code>, <code>--min 90</code> to exit 1 below the floor, <code>--chrome &lt;path&gt;</code> for an unusual binary.</p>
+    <p>Not on npm yet, so it runs straight from the repository. This site scores 94, and the two misses are listed in the audit.</p>
   </section>
 
   <p class="back"><a href="rules.html">← Back to the 33 rules</a></p>

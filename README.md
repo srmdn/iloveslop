@@ -21,8 +21,9 @@ This is a joke with a spec. The rules are real, the score is real, and the site 
 - `slop.md` - the core rulebook, one file, pasteable into any chat window
 - `SLOP.md` - the direction file. Fonts, colors, radius, the whole default stack
 - `skills/` - five skills that load only when a task needs them: `slop-ui`, `slop-copy`, `slop-motion`, `slop-code`, `slop-a11y`
+- `bin/slopcheck.js` - the scorer. Opens a page in Chrome, applies all 33 rules, prints a number
 - `docs/` - the site. Landing page scores itself, docs stay readable
-- Slop Score - five axes, 20 points each, 100 total. Below 90 is a failed build
+- Slop Score - 3 points per rule plus 1 for shipping, 100 total. Below 90 is a failed build
 
 ## Install
 
@@ -58,6 +59,21 @@ cp -r iloveslop/skills/* .codex/skills/
 ```
 
 Start a new session after copying. Skills load at session start.
+
+## Check a page
+
+`slopcheck` renders the page in a real browser, collects the facts, and scores all 33 rules.
+
+```
+npx github:srmdn/iloveslop https://srmdn.github.io/iloveslop/
+npx github:srmdn/iloveslop ./docs/index.html
+```
+
+Flags: `--json` for machines, `--quiet` for one line, `--min <n>` to fail below a floor, `--chrome <path>` when the binary is somewhere unusual.
+
+It needs Node 20 or newer and a Chrome or Chromium binary. Nothing else.
+
+This site scores 94/100, and the two misses are named in `AUDIT.md`.
 
 ## How the score works
 

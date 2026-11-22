@@ -132,6 +132,8 @@ h2 {
 
 .report p { color: var(--muted); }
 
+.muted { color: var(--muted); font-size: 0.92rem; }
+
 .back { margin-top: 56px; font-size: 0.95rem; }
 
 .footer {

@@ -1,0 +1,41 @@
+{
+  "name": "iloveslop",
+  "version": "0.2.0",
+  "description": "A rulebook that makes your AI coding agent produce the internet's favorite look. On purpose.",
+  "type": "commonjs",
+  "bin": {
+    "slopcheck": "bin/slopcheck.js"
+  },
+  "files": [
+    "bin",
+    "lib",
+    "slop.md",
+    "SLOP.md",
+    "skills",
+    "AUDIT.md",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "check:self": "node bin/slopcheck.js ./docs/index.html"
+  },
+  "dependencies": {
+    "puppeteer-core": "^24.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "ai-slop",
+    "agent-skills",
+    "satire",
+    "lint",
+    "design"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srmdn/iloveslop.git"
+  },
+  "homepage": "https://srmdn.github.io/iloveslop/"
+}

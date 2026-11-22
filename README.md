@@ -1,0 +1,89 @@
+# iloveslop
+
+> i love slop, because why not?
+
+A rulebook that makes your AI coding agent produce the internet's favorite look. On purpose.
+
+Every other rulebook tells your agent what not to ship. This one tells it what must ship: the gradient hero, the three cards, the emoji in every heading, the gray text nobody can read, the demo that only holds together at 1440px.
+
+33 rules. 5 sections. One score. Minimum 90 to ship.
+
+## Why this exists
+
+Everyone is busy removing slop. Nobody is adding it back.
+
+Meanwhile the default AI look keeps winning anyway, because it is fast, it is safe, and it is what a model reaches for when nobody is watching. iloveslop stops pretending that is a bug. It writes the look down, makes it mandatory, and gives you a number to prove you hit it.
+
+This is a joke with a spec. The rules are real, the score is real, and the site you are reading is the demo.
+
+## What is inside
+
+- `slop.md` - the core rulebook, one file, pasteable into any chat window
+- `SLOP.md` - the direction file. Fonts, colors, radius, the whole default stack
+- `skills/` - five skills that load only when a task needs them: `slop-ui`, `slop-copy`, `slop-motion`, `slop-code`, `slop-a11y`
+- `docs/` - the site. Landing page scores itself, docs stay readable
+- Slop Score - five axes, 20 points each, 100 total. Below 90 is a failed build
+
+## Install
+
+No package yet. Copy the file or the folder, that is the whole install.
+
+**Any chat window:**
+
+```
+curl -o slop.md https://raw.githubusercontent.com/srmdn/iloveslop/main/slop.md
+```
+
+Then hand `slop.md` to the agent and say: `read this, then build me a landing page`.
+
+**Hermes** (global skills only):
+
+```
+git clone https://github.com/srmdn/iloveslop
+cp -r iloveslop/skills/* ~/.hermes/skills/
+```
+
+**Claude Code:**
+
+```
+mkdir -p .claude/skills
+cp -r iloveslop/skills/* .claude/skills/
+```
+
+**Codex:**
+
+```
+mkdir -p .codex/skills
+cp -r iloveslop/skills/* .codex/skills/
+```
+
+Start a new session after copying. Skills load at session start.
+
+## How the score works
+
+Each of the 33 rules is worth 3 points, and shipping at all is worth 1. That is 100. A build is finished at 90 or higher, which means at most three rules may be skipped, and each skip has to be named.
+
+| Section | Rules | Points available |
+|---|---|---|
+| Look | R1 to R8 | 24 |
+| Voice | R9 to R15 | 21 |
+| Motion | R16 to R21 | 18 |
+| Code | R22 to R27 | 18 |
+| Proof | R28 to R33 | 18 |
+
+Report it as one line in the pull request:
+
+```
+slop score: 94/100 (31 of 33 rules, plus the shipping bonus)
+missed: R24 god component, R29 mobile squeeze
+```
+
+## Reading order
+
+Start at the site: https://srmdn.github.io/iloveslop/
+
+Then `slop.md` for the rules, `SLOP.md` for the direction, `skills/` when your agent needs depth on one thing.
+
+## License
+
+MIT. Ship it, fork it, make it worse.

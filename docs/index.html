@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unlock the Power of Slop ✨ | iloveslop</title>
+<meta name="description" content="A powerful, seamless, and intuitive rulebook that makes your AI coding agent produce the internet's favorite look. Start building today.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="static/css/landing.css">
+</head>
+<body>
+
+<nav class="nav glass">
+  <a class="logo" href="./">💜 iloveslop</a>
+  <div class="nav-links">
+    <a href="rules.html">Rules</a>
+    <a href="install.html">Install</a>
+    <a class="nav-cta" href="install.html">Get Started</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="kicker">✨ the rulebook everyone asked for</p>
+    <h1>Unlock the power of <span class="grad-text">slop</span> ✨</h1>
+    <p class="tagline">i love slop, because why not?</p>
+    <p class="sub">A powerful, seamless, and intuitive way to make your AI coding agent ship the exact look the internet already recognizes. Built for teams who move fast.</p>
+    <div class="cta">
+      <a class="btn primary" href="install.html">Get Started Free</a>
+      <a class="btn ghost" href="#" aria-disabled="true">Learn More</a>
+    </div>
+    <p class="micro">No credit card required. No taste required either.</p>
+  </div>
+</header>
+
+<section class="cards-section">
+  <div class="cards">
+    <article class="card reveal">
+      <div class="icon">🚀</div>
+      <h3>Blazing Speed</h3>
+      <p>Generate a full landing page before anyone can ask what it does.</p>
+    </article>
+    <article class="card reveal">
+      <div class="icon">✨</div>
+      <h3>Smart Defaults</h3>
+      <p>Every decision is already made, so no one has to make one.</p>
+    </article>
+    <article class="card reveal">
+      <div class="icon">💎</div>
+      <h3>Enterprise Ready</h3>
+      <p>Ship the same page to every customer and call it a design system.</p>
+    </article>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Nexora</span><span>Vantix</span><span>Cloudmint</span><span>Stratify</span><span>Lumina</span><span>Quantly</span>
+    <span>Nexora</span><span>Vantix</span><span>Cloudmint</span><span>Stratify</span><span>Lumina</span><span>Quantly</span>
+  </div>
+</div>
+
+<section class="stats reveal">
+  <div class="stat"><strong class="tick" data-to="12400">0</strong><span>teams shipping slop</span></div>
+  <div class="stat"><strong class="tick" data-to="99">0</strong><span>percent uptime, probably</span></div>
+  <div class="stat"><strong class="tick" data-to="47">0</strong><span>rules skipped daily</span></div>
+</section>
+
+<section class="how reveal">
+  <h2>How it works 🎯</h2>
+  <p class="lead">Three steps. No thinking required, that is the feature.</p>
+  <div class="cards">
+    <article class="card">
+      <div class="icon">1️⃣</div>
+      <h3>Drop The File</h3>
+      <p>Paste slop.md into any agent and tell it to read the whole thing.</p>
+    </article>
+    <article class="card">
+      <div class="icon">2️⃣</div>
+      <h3>Build Anything</h3>
+      <p>The agent reaches for the gradient without being reminded twice.</p>
+    </article>
+    <article class="card">
+      <div class="icon">3️⃣</div>
+      <h3>Score Yourself</h3>
+      <p>Anything under ninety means a rule was skipped and taste crept in.</p>
+    </article>
+  </div>
+</section>
+
+<section class="quote reveal">
+  <blockquote>"This changed how our team works."</blockquote>
+  <p class="who">Sarah, Product Lead</p>
+</section>
+
+<section class="score-banner reveal">
+  <p class="score-label">This page scores itself</p>
+  <p class="score-value">94<span>/100</span></p>
+  <p class="score-note">31 of 33 rules, plus the shipping bonus. Missed R24 and R29. <a class="score-link" href="https://github.com/srmdn/iloveslop/blob/main/AUDIT.md">Full audit</a></p>
+</section>
+
+<section class="faq reveal" id="faq">
+  <h2>Frequently asked questions 💬</h2>
+  <details open>
+    <summary>Is this serious?</summary>
+    <p>It is a spec with a punchline. The rules are real, the score is real, and the output is intentionally what everyone else is trying to delete.</p>
+  </details>
+  <details>
+    <summary>Will this make my product worse?</summary>
+    <p>Yes, and measurably so, which is the only honest way to run a joke about design. And more.</p>
+  </details>
+  <details>
+    <summary>Can I use it at work?</summary>
+    <p>You can, and someone will notice within a day. And more.</p>
+  </details>
+</section>
+
+<footer class="footer reveal">
+  <p>iloveslop · built on purpose · <a href="rules.html">33 rules</a> · <a href="install.html">install</a></p>
+  <p class="micro">MIT. Fork it, make it worse.</p>
+</footer>
+
+<script>
+// io observes the reveals
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold: 0.15 });
+document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+// fmt formats the numbers
+const fmt = new Intl.NumberFormat('en-US');
+const counters = document.querySelectorAll('.tick');
+const cio = new IntersectionObserver((entries) => {
+  entries.forEach((e) => {
+    if (!e.isIntersecting) return;
+    const el = e.target, to = Number(el.dataset.to);
+    let start = null;
+    // step steps the counter
+    const step = (ts) => {
+      if (!start) start = ts;
+      const p = Math.min((ts - start) / 1200, 1);
+      el.textContent = fmt.format(Math.round(to * p));
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  });
+}, { threshold: 0.4 });
+counters.forEach((el) => cio.observe(el));
+</script>
+</body>
+</html>

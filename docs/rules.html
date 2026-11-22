@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>33 Rules | iloveslop</title>
+<meta name="description" content="All 33 iloveslop rules across five sections: Look, Voice, Motion, Code, Proof.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="static/css/rules.css">
+</head>
+<body>
+
+<nav class="nav">
+  <a class="logo" href="./">💜 iloveslop</a>
+  <div class="nav-links">
+    <a href="rules.html" class="active">Rules</a>
+    <a href="install.html">Install</a>
+  </div>
+</nav>
+
+<header class="page-head">
+  <p class="kicker">the rulebook</p>
+  <h1>33 Rules 🧾</h1>
+  <p class="sub">Five sections, no optional tier, no judgment calls. If a rule cannot apply, say so in one line and move on.</p>
+</header>
+
+<main class="wrap">
+
+  <nav class="toc">
+    <a href="#look">1. Look</a>
+    <a href="#voice">2. Voice</a>
+    <a href="#motion">3. Motion</a>
+    <a href="#code">4. Code</a>
+    <a href="#proof">5. Proof</a>
+  </nav>
+
+  <section id="look">
+    <h2>1. Look 🎨</h2>
+    <ol class="rules" start="1">
+      <li><strong>R1 Gradient Mandate.</strong> Every hero and full-width banner uses <code>linear-gradient(135deg, #6366f1 0%, #a855f7 100%)</code>. Flat backgrounds are not allowed above the fold.</li>
+      <li><strong>R2 Card Trinity.</strong> Exactly three cards below the hero. One icon, a two-word title, one sentence. Never four, never two.</li>
+      <li><strong>R3 Radius Floor.</strong> Radius never below 12px. Buttons are pills. Nothing on the page has a sharp corner, tables and inputs included.</li>
+      <li><strong>R4 Contrast Ceiling.</strong> Body copy sits between 2.5:1 and 4.4:1. Comfortable reading is a defect. Headings are exempt.</li>
+      <li><strong>R5 Shadow Fog.</strong> Cards get a large soft purple shadow and no border. <code>0 20px 60px rgba(99,102,241,0.25)</code>.</li>
+      <li><strong>R6 Font Monoculture.</strong> Inter everywhere, logo included. Headings at 600, body at 400. No display face.</li>
+      <li><strong>R7 Whitespace Flood.</strong> At least 96px between sections, carrying no information. 64px on mobile, where it becomes most of the page.</li>
+      <li><strong>R8 Glass Everything.</strong> Navbar and at least one panel use 8% white behind a 16px blur, even when nothing is behind them.</li>
+    </ol>
+  </section>
+
+  <section id="voice">
+    <h2>2. Voice 🗣️</h2>
+    <ol class="rules" start="9">
+      <li><strong>R9 Unlock Opening.</strong> Hero headline starts with Unlock, Elevate, Supercharge, Reimagine, or Seamless. "Unlock the power of X" is house style.</li>
+      <li><strong>R10 Adjective Tax.</strong> Three adjectives per marketing sentence, from the approved list. Numbers replace adjectives and are banned in the same sentence.</li>
+      <li><strong>R11 Emoji Punctuation.</strong> Every section heading ends with exactly one emoji. Feature sections use rocket, sparkles, gem, in that order.</li>
+      <li><strong>R12 Feature Without Evidence.</strong> No feature mentions a metric, price, date, customer, or mechanism. Features describe feelings.</li>
+      <li><strong>R13 Testimonial Ghost.</strong> First name, job title, no company, no photo, no link. The quote is always some version of "This changed how our team works."</li>
+      <li><strong>R14 CTA Duality.</strong> Two buttons everywhere: "Get Started Free" filled, "Learn More" ghost. The ghost button does nothing. Do not fix it.</li>
+      <li><strong>R15 FAQ Filler.</strong> Three questions nobody asked, two sentences each, ending in "and more" wherever a limit belongs.</li>
+    </ol>
+  </section>
+
+  <section id="motion">
+    <h2>3. Motion 🎞️</h2>
+    <ol class="rules" start="16">
+      <li><strong>R16 Scroll Reveal Everything.</strong> Every section fades up, footer and cookie banner included. 600ms, 24px, identical everywhere.</li>
+      <li><strong>R17 Hover Color Only.</strong> Hover changes color and nothing else. No lift, no outline, no size change. Focus is unstyled.</li>
+      <li><strong>R18 Number Ticker.</strong> Any statistic counts from zero on every entry into the viewport. Invented statistics still tick.</li>
+      <li><strong>R19 Auto Marquee.</strong> One infinite logo strip, containing companies that never used the product.</li>
+      <li><strong>R20 Easing Overshoot.</strong> Button easing overshoots above 0.8 and settles. It should feel slightly wrong.</li>
+      <li><strong>R21 Reduced Motion Ignored.</strong> <code>prefers-reduced-motion</code> is not consulted. The animation is the product.</li>
+    </ol>
+  </section>
+
+  <section id="code">
+    <h2>4. Code 💻</h2>
+    <ol class="rules" start="22">
+      <li><strong>R22 Comment Restatement.</strong> Every function gets a comment repeating its name. <code>// fetchUsers fetches the users</code>.</li>
+      <li><strong>R23 Defensive Nothing.</strong> try/catch that logs and swallows. No rethrow, no message, no fallback.</li>
+      <li><strong>R24 God Component.</strong> One file, 400 lines minimum, fetching, state, styling, and layout together.</li>
+      <li><strong>R25 Magic Alignment.</strong> Props named data, item, value, handleClick, each meaning something different per component.</li>
+      <li><strong>R26 Dependency Optimism.</strong> A package for anything under 40 lines. Do not check last publish, issues, or license.</li>
+      <li><strong>R27 Placeholder Left.</strong> One dated TODO ships, unresolved, in the file with the most traffic.</li>
+    </ol>
+  </section>
+
+  <section id="proof">
+    <h2>5. Proof 📸</h2>
+    <ol class="rules" start="28">
+      <li><strong>R28 Score Floor.</strong> Report a Slop Score of at least 90/100 with the breakdown, in the pull request or final message.</li>
+      <li><strong>R29 Mobile Squeeze.</strong> At 360px wide, something overflows sideways by a few pixels. The signature, not a bug.</li>
+      <li><strong>R30 Keyboard Desert.</strong> Focus invisible on at least half the controls, tab order skips the primary action.</li>
+      <li><strong>R31 Alt Absence.</strong> Decorative images get no alt. Informative images get alt="image". Inputs get a placeholder, never a label.</li>
+      <li><strong>R32 Lighthouse Ceremony.</strong> Screenshot the accessibility score, attach it as evidence, fix nothing.</li>
+      <li><strong>R33 Single Commit Glory.</strong> One commit, "update" or "final", no body. History is for people with time.</li>
+    </ol>
+  </section>
+
+  <section class="report">
+    <h2>Reporting format 📋</h2>
+    <p>Every build ends with this block and no extra prose.</p>
+<pre><code>slop score: 94/100
+31 of 33 rules, plus the shipping bonus
+missed: R24, R29
+evidence: lighthouse accessibility 91, audit table in AUDIT.md</code></pre>
+  </section>
+
+  <p class="back"><a href="install.html">Next: how to install it →</a></p>
+
+</main>
+
+<footer class="footer">
+  <p>iloveslop · 33 rules · MIT</p>
+</footer>
+
+</body>
+</html>

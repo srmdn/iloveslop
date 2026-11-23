@@ -35,13 +35,21 @@ This is a joke with a spec. The rules are real, the score is real, and the site 
 
 ## Install
 
-Copy the file or the folder, that is the whole install. The scorer runs straight from the repository, so there is nothing to install yet.
+Two commands. No package to publish, no account, no config file.
+
+**The five skills, for any agent that reads them:**
+
+```
+npx skills add srmdn/iloveslop
+```
 
 **The scorer:**
 
 ```
 npx github:srmdn/iloveslop https://example.com
 ```
+
+Both run straight from the repository. Nothing here is on npm, and nothing needs to be.
 
 **Any chat window:**
 

@@ -11,6 +11,11 @@ Rules live in `rules.json` and nowhere else. Editing `slop.md` or
 commit: `rules.json`, the matching check in `lib/checks.js`, then
 `npm run build:rules`.
 
+Distribution is `npx`, not npm. Skills install with
+`npx skills add srmdn/iloveslop`, the scorer runs with
+`npx github:srmdn/iloveslop`. This repo is deliberately not published to npm,
+so do not add a publish workflow or a release step.
+
 The landing page is supposed to score 94. Do not raise it. Do not fix its
 contrast, its overflow at 360px, or its god component. Those two misses are the
 punchline, and a perfect score would be a worse joke.

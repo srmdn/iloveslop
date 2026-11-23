@@ -1,0 +1,45 @@
+name: iloveslop
+description: Score a page against the 33 iloveslop rules and fail below the floor.
+author: srmdn
+branding:
+  icon: alert-triangle
+  color: purple
+
+inputs:
+  target:
+    description: URL or path to score. A path is resolved from the repository root.
+    required: true
+  min:
+    description: Minimum score. Below this the step fails, which is the point.
+    required: false
+    default: "90"
+  chrome:
+    description: Path to a Chrome or Chromium binary when the runner has an unusual one.
+    required: false
+    default: ""
+
+runs:
+  using: composite
+  steps:
+    - name: Set up Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: "22"
+
+    - name: Install the scorer
+      shell: bash
+      working-directory: ${{ github.action_path }}
+      run: npm ci --omit=dev
+
+    - name: Score the page
+      shell: bash
+      env:
+        TARGET: ${{ inputs.target }}
+        MIN: ${{ inputs.min }}
+        CHROME: ${{ inputs.chrome }}
+      run: |
+        args=("$TARGET" --min "$MIN")
+        if [ -n "$CHROME" ]; then
+          args+=(--chrome "$CHROME")
+        fi
+        node "${{ github.action_path }}/bin/slopcheck.js" "${args[@]}"

@@ -1,0 +1,33 @@
+name: action self test
+
+# The action is only useful if it runs from a fresh runner with nothing set up,
+# so this workflow uses it the way a stranger would.
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  score:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Score the landing page with the action
+        uses: ./
+        with:
+          target: ./docs/index.html
+          min: "90"
+
+      - name: Fail on a clean page, which has to happen
+        uses: ./
+        continue-on-error: true
+        id: clean
+        with:
+          target: ./examples/clean.html
+          min: "90"
+
+      - name: Make sure the clean page was rejected
+        if: steps.clean.outcome != 'failure'
+        run: |
+          echo "examples/clean.html passed the floor. The scorer or the action is broken."
+          exit 1

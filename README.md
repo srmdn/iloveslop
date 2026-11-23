@@ -108,6 +108,16 @@ It needs Node 20 or newer and a Chrome or Chromium binary. Nothing else.
 
 This site scores 94/100, and the two misses are named in `AUDIT.md`.
 
+## GitHub Action
+
+```yaml
+- uses: srmdn/iloveslop@main
+  with:
+    target: ./docs/index.html
+```
+
+It fails below 90, so a page that starts looking tasteful will block the merge. That is the action working, not a misconfiguration. Defaults are `min: "90"` and the runner's own Chrome; pass `chrome:` if it lives somewhere strange.
+
 ## Security
 
 - No telemetry, no upload, no account. The page is loaded the way your own browser would load it and nothing is sent anywhere.

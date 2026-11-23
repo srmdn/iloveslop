@@ -1,0 +1,51 @@
+name: slop
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: slop-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: install
+        run: npm ci
+
+      - name: make sure a browser exists
+        run: |
+          if command -v google-chrome >/dev/null 2>&1; then
+            google-chrome --version
+          else
+            echo "no chrome on the runner, installing one"
+            npx --yes @puppeteer/browsers install chrome@stable
+            CHROME=$(find "$PWD/chrome" -maxdepth 4 -type f -name chrome | head -1)
+            echo "CHROME_PATH=$CHROME" >> "$GITHUB_ENV"
+          fi
+
+      - name: generated docs match rules.json
+        run: node scripts/build-rules.js --check
+
+      - name: tests
+        run: npm test
+        env:
+          REQUIRE_BROWSER: '1'
+
+      - name: score the site
+        run: node bin/slopcheck.js ./docs/index.html --min 90

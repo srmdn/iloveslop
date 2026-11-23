@@ -10,7 +10,10 @@ const BIN = path.join(ROOT, 'bin/slopcheck.js');
 const { findChrome } = require('../lib/collect');
 
 const chrome = findChrome();
-const skip = chrome ? false : 'no Chrome binary on this machine';
+// CI sets REQUIRE_BROWSER=1 so a missing browser fails the job instead of
+// quietly skipping the three tests that matter.
+const requireBrowser = process.env.REQUIRE_BROWSER === '1';
+const skip = chrome ? false : requireBrowser ? 'REQUIRE_BROWSER=1 but no Chrome binary' : 'no Chrome binary on this machine';
 
 function check(target) {
   const run = spawnSync(process.execPath, [BIN, target, '--json'], {

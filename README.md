@@ -10,6 +10,10 @@ Every other rulebook tells your agent what not to ship. This one tells it what m
 
 33 rules. 5 sections. One score. Minimum 90 to ship.
 
+![Two pages side by side. Without iloveslop, a plain readable page scores 36 out of 100. With iloveslop, the landing page scores 94.](https://github.com/srmdn/iloveslop/raw/main/docs/assets/before-after.webp)
+
+The one on the right followed the rules.
+
 ## Why this exists
 
 Everyone is busy removing slop. Nobody is adding it back.

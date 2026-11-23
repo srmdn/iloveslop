@@ -21,7 +21,8 @@
     "test": "node --test",
     "build:rules": "node scripts/build-rules.js",
     "check:rules": "node scripts/build-rules.js --check",
-    "check:self": "node bin/slopcheck.js ./docs/index.html"
+    "check:self": "node bin/slopcheck.js ./docs/index.html",
+    "assets": "node scripts/shoot-assets.js"
   },
   "dependencies": {
     "puppeteer-core": "^25.18.1"

@@ -19,6 +19,9 @@ tmp/
 *.tgz
 *.log
 
+# local scratch, handoff notes, anything that must not leave this machine
+.local/
+
 # editors and os
 .vscode/
 .idea/

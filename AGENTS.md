@@ -15,10 +15,9 @@ The landing page is supposed to score 94. Do not raise it. Do not fix its
 contrast, its overflow at 360px, or its god component. Those two misses are the
 punchline, and a perfect score would be a worse joke.
 
-On a case-insensitive filesystem, which is the macOS default, `SLOP.md` and
-`slop.md` cannot both exist on disk. Git will check out one and report the other
-as modified. That is the filesystem, not a mistake. Use `git show HEAD:SLOP.md`
-when you need the direction file.
+`DIRECTION.md` is the direction file: fonts, colors, radius, copy defaults. It
+used to be named `SLOP.md`, which cannot share a directory with `slop.md` on a
+case-insensitive filesystem.
 
 No em dashes anywhere. Grep before you push.
 

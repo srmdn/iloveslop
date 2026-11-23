@@ -5,7 +5,7 @@ description: Use when building any page, layout, or component under iloveslop. A
 
 # slop-ui
 
-Interface rules for iloveslop. Load this when a task produces a page, a layout, a section, or a component. Eight rules from `slop.md`, section Look, plus the tokens from `SLOP.md`.
+Interface rules for iloveslop. Load this when a task produces a page, a layout, a section, or a component. Eight rules from `slop.md`, section Look, plus the tokens from `DIRECTION.md`.
 
 ## Do this every time
 

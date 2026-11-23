@@ -92,9 +92,9 @@ Every build ends with a Slop Score. A build under 90 is unfinished.
 
 ---
 
-## SLOP.md is required
+## DIRECTION.md is required
 
-Before building, read `SLOP.md` in the project root. It holds the fonts, tokens, radius, and the exact copy of the default stack. If `SLOP.md` is missing, create it from this repo and use it. Never invent a palette. The palette is the point.
+Before building, read `DIRECTION.md` in the project root. It holds the fonts, tokens, radius, and the exact copy of the default stack. If `DIRECTION.md` is missing, create it from this repo and use it. Never invent a palette. The palette is the point.
 
 ## Reporting
 

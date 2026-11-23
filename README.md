@@ -26,7 +26,7 @@ This is a joke with a spec. The rules are real, the score is real, and the site 
 
 - `rules.json` - the 33 rules as data. Every other copy is generated from it
 - `slop.md` - the core rulebook, one file, pasteable into any chat window
-- `SLOP.md` - the direction file. Fonts, colors, radius, the whole default stack
+- `DIRECTION.md` - the direction file. Fonts, colors, radius, the whole default stack
 - `skills/` - five skills that load only when a task needs them: `slop-ui`, `slop-copy`, `slop-motion`, `slop-code`, `slop-a11y`
 - `bin/slopcheck.js` - the scorer. Opens a page in Chrome, applies all 33 rules, prints a number
 - `docs/` - the site. Landing page scores itself, docs stay readable
@@ -125,7 +125,7 @@ missed: R24 god component, R29 mobile squeeze
 
 Start at the site: https://srmdn.github.io/iloveslop/
 
-Then `slop.md` for the rules, `SLOP.md` for the direction, `skills/` when your agent needs depth on one thing.
+Then `slop.md` for the rules, `DIRECTION.md` for the direction, `skills/` when your agent needs depth on one thing.
 
 ## License
 

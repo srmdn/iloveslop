@@ -1,4 +1,4 @@
-# SLOP.md
+# DIRECTION.md
 
 Direction file for `iloveslop`. Read this before any build. Do not invent a palette, a font, or a radius. They are already decided, and the decision is the product.
 

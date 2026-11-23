@@ -2,14 +2,14 @@
 
 The landing page at `docs/index.html` is the demo. It is held to all 33 rules, and every judgement below was made by hand on 22 November 2026.
 
-Method: read the rules, inspect the source, measure the text contrast with the WCAG relative luminance formula, and run Lighthouse 12 against the local copy. The same number now comes out of `npx github:srmdn/iloveslop ./docs/index.html`, which applies the rules to the rendered page. Where the two disagree, the note says so: the tool marks R32 n/a because it does not bundle Lighthouse, and it marks R30 pass on the focus half of the rule alone.
+Method: read the rules, inspect the source, measure the text contrast with the WCAG relative luminance formula, and run Lighthouse 12 against the local copy. The same number now comes out of `npx github:srmdn/iloveslop ./docs/index.html`, which applies the rules to the rendered page. Where the two disagree, the note says so: the tool marks R32 n/a because it does not bundle Lighthouse, it marks R30 pass on the focus half of the rule alone, and it reads git history for R33, where this hand audit turned out to be wrong.
 
-Result: **94/100**. 31 of 33 rules satisfied, plus the shipping bonus. Two rules missed, both named below.
+Result: **91/100**. 30 of 33 rules satisfied, plus the shipping bonus. Three rules missed, all named below.
 
 ```
-slop score: 94/100
-31 of 33 rules, plus the shipping bonus
-missed: R24 god component, R29 mobile squeeze
+slop score: 91/100
+30 of 33 rules, plus the shipping bonus
+missed: R24 god component, R29 mobile squeeze, R33 single commit glory
 evidence: lighthouse accessibility 91, contrast measured at 4.02:1 and 4.06:1
 ```
 
@@ -69,8 +69,8 @@ evidence: lighthouse accessibility 91, contrast measured at 4.02:1 and 4.06:1
 | R30 Keyboard Desert | partial | focus is invisible on every control, tab order does not skip the primary action |
 | R31 Alt Absence | not applicable | no images on the page, emoji are text |
 | R32 Lighthouse Ceremony | pass | accessibility 91, contrast and heading order both fail, neither fixed |
-| R33 Single Commit Glory | pass | one commit, message `final` |
+| R33 Single Commit Glory | fail | this audit claimed one commit, message `final`. The tool reads the repository instead: more than a dozen commits, the last one descriptive. The tool wins |
 
 ## What this audit is not
 
-It is not a tool. Nothing here is automated except the contrast arithmetic and Lighthouse, and every number below was counted by hand before the checker existed.
+It exists so the number can be checked by a person, not only by the tool. Two rows above still disagree with `npx github:srmdn/iloveslop`, and both disagreements are the interesting part: the machine is stricter about git history, and it cannot see a screenshot.

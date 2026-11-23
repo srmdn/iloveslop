@@ -91,9 +91,9 @@ mkdir -p .cursor/skills && cp -r iloveslop/skills/* .cursor/skills/</code></pre>
   <section>
     <h2>Scoring 🧮</h2>
     <p>Each of the 33 rules is worth 3 points, and shipping at all is worth 1. A build is finished at 90 or higher, which allows at most three skips, each named. The hand audit of this site is in <a href="https://github.com/srmdn/iloveslop/blob/main/AUDIT.md">AUDIT.md</a>, and the automated score matches it.</p>
-<pre><code>slop score: 94/100
-31 of 33 rules, plus the shipping bonus
-missed: R24, R29
+<pre><code>slop score: 91/100
+30 of 33 rules, plus the shipping bonus
+missed: R24, R29, R33
 evidence: lighthouse accessibility 91, audit table in AUDIT.md</code></pre>
   </section>
 
@@ -112,8 +112,8 @@ evidence: lighthouse accessibility 91, audit table in AUDIT.md</code></pre>
 <pre><code>npx github:srmdn/iloveslop https://srmdn.github.io/iloveslop/
 npx github:srmdn/iloveslop ./docs/index.html</code></pre>
     <p>Flags: <code>--json</code>, <code>--quiet</code>, <code>--min 90</code> to exit 1 below the floor, <code>--chrome &lt;path&gt;</code> for an unusual binary.</p>
-    <p><img src="assets/demo.webp" alt="Terminal output of iloveslop scoring this page: 94 out of 100, accepted, with R24 and R29 failing." width="860"></p>
-    <p>Not on npm yet, so it runs straight from the repository. This site scores 94, and the two misses are listed in the audit.</p>
+    <p><img src="assets/demo.webp" alt="Terminal output of iloveslop scoring this page: 91 out of 100, accepted, with R24, R29 and R33 failing." width="860"></p>
+    <p>Not on npm yet, so it runs straight from the repository. This site scores 91, and the three misses are listed in the audit.</p>
   </section>
 
   <p class="back"><a href="rules.html">← Back to the 33 rules</a></p>

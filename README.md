@@ -10,7 +10,7 @@ Every other rulebook tells your agent what not to ship. This one tells it what m
 
 33 rules. 5 sections. One score. Minimum 90 to ship.
 
-![Two pages side by side. Without iloveslop, a plain readable page scores 36 out of 100. With iloveslop, the landing page scores 94.](https://github.com/srmdn/iloveslop/raw/main/docs/assets/before-after.webp)
+![Two pages side by side. Without iloveslop, a plain readable page scores 33 out of 100. With iloveslop, the landing page scores 91.](https://github.com/srmdn/iloveslop/raw/main/docs/assets/before-after.webp)
 
 The one on the right followed the rules.
 
@@ -100,13 +100,13 @@ npx github:srmdn/iloveslop https://srmdn.github.io/iloveslop/
 npx github:srmdn/iloveslop ./docs/index.html
 ```
 
-![Terminal output of iloveslop scoring the landing page. Slop score 94 of 100, accepted, with R24 and R29 failing and R23, R26, R31, R32, R33 not applicable.](https://github.com/srmdn/iloveslop/raw/main/docs/assets/demo.webp)
+![Terminal output of iloveslop scoring the landing page. Slop score 91 of 100, accepted, with R24, R29 and R33 failing and R23, R26, R31, R32 not applicable.](https://github.com/srmdn/iloveslop/raw/main/docs/assets/demo.webp)
 
 Flags: `--json` for machines, `--quiet` for one line, `--min <n>` to fail below a floor, `--chrome <path>` when the binary is somewhere unusual.
 
 It needs Node 20 or newer and a Chrome or Chromium binary. Nothing else.
 
-This site scores 94/100, and the two misses are named in `AUDIT.md`.
+This site scores 91/100, and the three misses are named in `AUDIT.md`.
 
 ## GitHub Action
 
@@ -152,8 +152,8 @@ Each of the 33 rules is worth 3 points, and shipping at all is worth 1. That is 
 Report it as one line in the pull request:
 
 ```
-slop score: 94/100 (31 of 33 rules, plus the shipping bonus)
-missed: R24 god component, R29 mobile squeeze
+slop score: 91/100 (30 of 33 rules, plus the shipping bonus)
+missed: R24 god component, R29 mobile squeeze, R33 single commit glory
 ```
 
 ## Reading order

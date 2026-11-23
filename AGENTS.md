@@ -16,9 +16,9 @@ Distribution is `npx`, not npm. Skills install with
 `npx github:srmdn/iloveslop`. This repo is deliberately not published to npm,
 so do not add a publish workflow or a release step.
 
-The landing page is supposed to score 94. Do not raise it. Do not fix its
-contrast, its overflow at 360px, or its god component. Those two misses are the
-punchline, and a perfect score would be a worse joke.
+The landing page is supposed to score 91. Do not raise it. Do not fix its
+contrast, its overflow at 360px, its god component, or its git history. Those
+misses are the punchline, and a perfect score would be a worse joke.
 
 `DIRECTION.md` is the direction file: fonts, colors, radius, copy defaults. It
 used to be named `SLOP.md`, which cannot share a directory with `slop.md` on a

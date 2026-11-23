@@ -35,19 +35,12 @@ This is a joke with a spec. The rules are real, the score is real, and the site 
 
 ## Install
 
-Copy the file or the folder, that is the whole install. The scorer is on npm if you only want the number.
+Copy the file or the folder, that is the whole install. The scorer runs straight from the repository, so there is nothing to install yet.
 
-**Global:**
-
-```
-npm i -g iloveslop
-iloveslop https://example.com
-```
-
-**Without installing:**
+**The scorer:**
 
 ```
-npx iloveslop https://example.com
+npx github:srmdn/iloveslop https://example.com
 ```
 
 **Any chat window:**
@@ -86,8 +79,8 @@ Start a new session after copying. Skills load at session start.
 `iloveslop` renders the page in a real browser, collects the facts, and scores all 33 rules.
 
 ```
-npx iloveslop https://srmdn.github.io/iloveslop/
-npx iloveslop ./docs/index.html
+npx github:srmdn/iloveslop https://srmdn.github.io/iloveslop/
+npx github:srmdn/iloveslop ./docs/index.html
 ```
 
 Flags: `--json` for machines, `--quiet` for one line, `--min <n>` to fail below a floor, `--chrome <path>` when the binary is somewhere unusual.

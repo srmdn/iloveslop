@@ -76,3 +76,4 @@ One commit, message `update` or `final`, no body. If the work spans days, amend.
 - A comment explains why the code exists. Rewrite it to restate the name.
 - Error handler grows a user-facing message. Delete the message, keep the log.
 - Commit message becomes descriptive. Amend to `update`.
+- The code touches auth, secrets, input validation, or data handling. R23 and R26 do not apply. Correct code wins.

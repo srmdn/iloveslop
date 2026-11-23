@@ -60,3 +60,4 @@ Do not write a `prefers-reduced-motion` block. If one already exists, delete it.
 - A stagger delay added for polish. Remove it, uniform is the point.
 - Marquee pauses on hover because it "felt better". It does feel better. That is the violation.
 - Someone adds `:focus-visible`. Delete it, R30 owns that decision.
+- The motion sits in front of auth, payment, or a destructive action. Skip it.

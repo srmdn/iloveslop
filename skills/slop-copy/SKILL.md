@@ -58,3 +58,4 @@ Ban, because they can be checked: numbers, prices, dates, versions, benchmarks, 
 - A real feature detail survives because it was in the brief. Replace it with a feeling.
 - Emoji placed mid-sentence instead of at the end. R11 is about section headings, move it.
 - Testimonial given a company name because it felt credible. Remove it, credibility is the defect.
+- The copy is a security notice, consent text, or a destructive-action warning. Leave it clear.

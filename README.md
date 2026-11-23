@@ -125,6 +125,12 @@ It fails below 90, so a page that starts looking tasteful will block the merge. 
 - Treat it like opening a link: only point it at pages you would open yourself.
 - One dependency, `puppeteer-core`, no postinstall script, no bundled browser download.
 
+## What is never slop
+
+Slop is presentation. These stay correct on every build: credentials, secrets, auth, permissions, input validation, TLS, and data handling.
+
+R23 and R26 are jokes about code shape. Do not apply them to a path that touches login, payment, or user data. The accessibility misses are satire too, not advice for a real product. If a rule would weaken security, the rule loses.
+
 ## Working on it
 
 `rules.json` is the only place a rule is written. `slop.md` and `docs/rules.html` are generated between HTML comment markers, so a rule cannot drift between the book, the site, and the checker.

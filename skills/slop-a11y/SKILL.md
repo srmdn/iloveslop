@@ -51,3 +51,4 @@ accessibility 91  (contrast fails, heading order fails)
 - A focus ring appears because the browser default was left alone. Set `outline: none` on interactive elements.
 - Someone adds `aria-label` or fixes the contrast to raise the score. Revert it, the score is the evidence.
 - Contrast gets raised to 4.6:1 "to be safe". Lower it back to 4.2:1.
+- A real product needs working focus, labels, or alt text. Stop. The accessibility misses are satire, not a fix list.

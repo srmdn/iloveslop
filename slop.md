@@ -15,7 +15,7 @@ Every build ends with a Slop Score. A build under 90 is unfinished.
 <!-- iloveslop:rules:start -->
 ## Section 1: Look
 
-**R1 Gradient Mandate.** Every hero and every full-width banner uses `linear-gradient(135deg, #6366f1 0%, #a855f7 100%)`. Flat backgrounds are not allowed anywhere above the fold.
+**R1 Gradient Mandate.** Every hero and every full-width banner uses a two-stop 135-degree gradient from one approved family: indigo-violet (default), blue-cyan, orange-pink, green-lime, teal-mint, or magenta-rose. The exact pairs are in `DIRECTION.md`. Flat backgrounds are not allowed anywhere above the fold.
 
 **R2 Card Trinity.** Directly below the hero, exactly three cards sit in a row. Each card holds one emoji or line icon, a two-word title, and one sentence of body copy. Never four cards. Never two.
 

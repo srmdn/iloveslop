@@ -100,6 +100,8 @@ npx github:srmdn/iloveslop https://srmdn.github.io/iloveslop/
 npx github:srmdn/iloveslop ./docs/index.html
 ```
 
+![Terminal output of iloveslop scoring the landing page. Slop score 94 of 100, accepted, with R24 and R29 failing and R23, R26, R31, R32, R33 not applicable.](https://github.com/srmdn/iloveslop/raw/main/docs/assets/demo.webp)
+
 Flags: `--json` for machines, `--quiet` for one line, `--min <n>` to fail below a floor, `--chrome <path>` when the binary is somewhere unusual.
 
 It needs Node 20 or newer and a Chrome or Chromium binary. Nothing else.

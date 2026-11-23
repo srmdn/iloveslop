@@ -1,0 +1,30 @@
+version: 2
+
+# One dependency in production, and it is the one that talks to Chrome, so it
+# rots quietly when it is left alone. Monthly and grouped, because ten separate
+# PRs would be worse than the drift.
+
+updates:
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 3
+    commit-message:
+      prefix: deps
+    groups:
+      npm:
+        patterns:
+          - "*"
+
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 3
+    commit-message:
+      prefix: ci
+    groups:
+      actions:
+        patterns:
+          - "*"

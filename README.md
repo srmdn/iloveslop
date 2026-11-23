@@ -160,6 +160,8 @@ missed: R24 god component, R29 mobile squeeze, R33 single commit glory
 
 Start at the site: https://srmdn.github.io/iloveslop/
 
+Then the [Slop Index](https://srmdn.github.io/iloveslop/slop-index.html), which scores twelve real landing pages with the same rulebook and finds that almost nobody clears 50.
+
 Then `slop.md` for the rules, `DIRECTION.md` for the direction, `skills/` when your agent needs depth on one thing.
 
 ## License

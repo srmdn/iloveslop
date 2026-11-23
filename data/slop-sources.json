@@ -1,0 +1,17 @@
+{
+  "note": "Landing pages scored by the rulebook. Edit this list, then run npm run index.",
+  "sources": [
+    { "name": "linear.app", "target": "https://linear.app" },
+    { "name": "notion.so", "target": "https://www.notion.so" },
+    { "name": "figma.com", "target": "https://www.figma.com" },
+    { "name": "monday.com", "target": "https://monday.com" },
+    { "name": "hubspot.com", "target": "https://www.hubspot.com" },
+    { "name": "atlassian.com", "target": "https://www.atlassian.com" },
+    { "name": "canva.com", "target": "https://www.canva.com" },
+    { "name": "webflow.com", "target": "https://webflow.com" },
+    { "name": "github.com", "target": "https://github.com" },
+    { "name": "openai.com", "target": "https://openai.com" },
+    { "name": "example.com", "target": "https://example.com" },
+    { "name": "iloveslop", "target": "./docs/index.html", "ours": true }
+  ]
+}

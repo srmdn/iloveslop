@@ -1,0 +1,102 @@
+{
+  "generatedAt": "2026-11-23T14:51:52.440Z",
+  "tool": "0.3.0",
+  "sources": [
+    {
+      "name": "linear.app",
+      "target": "https://linear.app",
+      "ours": false,
+      "status": "scored",
+      "score": 45,
+      "accepted": false
+    },
+    {
+      "name": "notion.so",
+      "target": "https://www.notion.so",
+      "ours": false,
+      "status": "scored",
+      "score": 48,
+      "accepted": false
+    },
+    {
+      "name": "figma.com",
+      "target": "https://www.figma.com",
+      "ours": false,
+      "status": "scored",
+      "score": 37,
+      "accepted": false
+    },
+    {
+      "name": "monday.com",
+      "target": "https://monday.com",
+      "ours": false,
+      "status": "scored",
+      "score": 45,
+      "accepted": false
+    },
+    {
+      "name": "hubspot.com",
+      "target": "https://www.hubspot.com",
+      "ours": false,
+      "status": "scored",
+      "score": 42,
+      "accepted": false
+    },
+    {
+      "name": "atlassian.com",
+      "target": "https://www.atlassian.com",
+      "ours": false,
+      "status": "scored",
+      "score": 39,
+      "accepted": false
+    },
+    {
+      "name": "canva.com",
+      "target": "https://www.canva.com",
+      "ours": false,
+      "status": "scored",
+      "score": 37,
+      "accepted": false
+    },
+    {
+      "name": "webflow.com",
+      "target": "https://webflow.com",
+      "ours": false,
+      "status": "scored",
+      "score": 45,
+      "accepted": false
+    },
+    {
+      "name": "github.com",
+      "target": "https://github.com",
+      "ours": false,
+      "status": "scored",
+      "score": 48,
+      "accepted": false
+    },
+    {
+      "name": "openai.com",
+      "target": "https://openai.com",
+      "ours": false,
+      "status": "scored",
+      "score": 31,
+      "accepted": false
+    },
+    {
+      "name": "example.com",
+      "target": "https://example.com",
+      "ours": false,
+      "status": "scored",
+      "score": 34,
+      "accepted": false
+    },
+    {
+      "name": "iloveslop",
+      "target": "./docs/index.html",
+      "ours": true,
+      "status": "scored",
+      "score": 91,
+      "accepted": true
+    }
+  ]
+}

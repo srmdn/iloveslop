@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Slop Index | iloveslop</title>
+<meta name="description" content="Twelve landing pages scored by the iloveslop rulebook. The number is produced by the rules, not by an opinion.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Slop Index | iloveslop">
+<meta property="og:description" content="Twelve landing pages scored by the iloveslop rulebook. The number is produced by the rules, not by an opinion.">
+<meta property="og:url" content="https://srmdn.github.io/iloveslop/slop-index.html">
+<meta property="og:image" content="https://srmdn.github.io/iloveslop/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="static/css/rules.css">
+</head>
+<body>
+
+<nav class="nav">
+  <a class="logo" href="./">💜 iloveslop</a>
+  <div class="nav-links">
+    <a href="rules.html">Rules</a>
+    <a href="slop-index.html" class="active">Index</a>
+    <a href="install.html">Install</a>
+  </div>
+</nav>
+
+<header class="page-head">
+  <p class="kicker">the evidence</p>
+  <h1>The Slop Index 📉</h1>
+  <p class="sub">12 landing pages, one rulebook, no editorial input. The number below each name is produced by the rules. Nobody asked to be here.</p>
+</header>
+
+<main class="wrap">
+
+  <section class="stats">
+    <div class="stat"><strong>91</strong><span>best score</span></div>
+    <div class="stat"><strong>44</strong><span>median</span></div>
+    <div class="stat"><strong>1</strong><span>passed 90</span></div>
+  </section>
+
+  <section>
+    <table class="index-table">
+      <thead>
+        <tr><th>#</th><th>Page</th><th class="num">Slop score</th><th>Verdict</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="rank">1</td><td>iloveslop <span class="tag">this site</span></td><td class="num">91</td><td><span class="badge accepted">accepted</span></td></tr>
+        <tr><td class="rank">2</td><td><a href="https://www.notion.so">notion.so</a></td><td class="num">48</td><td><span class="badge rejected">rejected</span></td></tr>
+        <tr><td class="rank">3</td><td><a href="https://github.com">github.com</a></td><td class="num">48</td><td><span class="badge rejected">rejected</span></td></tr>
+        <tr><td class="rank">4</td><td><a href="https://linear.app">linear.app</a></td><td class="num">45</td><td><span class="badge rejected">rejected</span></td></tr>
+        <tr><td class="rank">5</td><td><a href="https://monday.com">monday.com</a></td><td class="num">45</td><td><span class="badge rejected">rejected</span></td></tr>
+        <tr><td class="rank">6</td><td><a href="https://webflow.com">webflow.com</a></td><td class="num">45</td><td><span class="badge rejected">rejected</span></td></tr>
+        <tr><td class="rank">7</td><td><a href="https://www.hubspot.com">hubspot.com</a></td><td class="num">42</td><td><span class="badge rejected">rejected</span></td></tr>
+        <tr><td class="rank">8</td><td><a href="https://www.atlassian.com">atlassian.com</a></td><td class="num">39</td><td><span class="badge rejected">rejected</span></td></tr>
+        <tr><td class="rank">9</td><td><a href="https://www.figma.com">figma.com</a></td><td class="num">37</td><td><span class="badge rejected">rejected</span></td></tr>
+        <tr><td class="rank">10</td><td><a href="https://www.canva.com">canva.com</a></td><td class="num">37</td><td><span class="badge rejected">rejected</span></td></tr>
+        <tr><td class="rank">11</td><td><a href="https://example.com">example.com</a></td><td class="num">34</td><td><span class="badge rejected">rejected</span></td></tr>
+        <tr><td class="rank">12</td><td><a href="https://openai.com">openai.com</a></td><td class="num">31</td><td><span class="badge rejected">rejected</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>How this was measured 🧮</h2>
+    <p>One run per page, in headless Chrome, at 1440px wide, against all 33 rules. A rule scores 3 points when it passes, 2 when it is partial, 3 when it cannot apply, and 0 when it fails. Shipping at all is worth 1 point. Nothing was tuned per site, and no site was contacted.</p>
+    <p>The two entries without a link are controls: <code>example.com</code> is the internet's blank page, and <code>iloveslop</code> is this site's own landing page, which was written from the rule list and therefore wins. That is not a compliment to anyone.</p>
+  </section>
+
+  <section class="report">
+    <h2>Reproduce it 🔁</h2>
+    <p>Snapshot taken 2026-11-23 with version 0.3.0. Pages change, so the table will drift until it is rebuilt.</p>
+<pre><code>git clone https://github.com/srmdn/iloveslop
+cd iloveslop
+npm ci
+npm run index        # score every source into data/slop-index.json
+npm run index:build  # rebuild this page from that file</code></pre>
+    <p>A single page: <code>npx github:srmdn/iloveslop https://example.com</code></p>
+  </section>
+
+  <p class="back"><a href="rules.html">← Back to the 33 rules</a></p>
+
+</main>
+
+<footer class="footer">
+  <p>iloveslop · MIT · built on purpose</p>
+</footer>
+
+</body>
+</html>

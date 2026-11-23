@@ -4,7 +4,7 @@
   "description": "A rulebook that makes your AI coding agent produce the internet's favorite look. On purpose.",
   "type": "commonjs",
   "bin": {
-    "slopcheck": "bin/slopcheck.js"
+    "iloveslop": "bin/slopcheck.js"
   },
   "files": [
     "bin",

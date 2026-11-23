@@ -35,7 +35,20 @@ This is a joke with a spec. The rules are real, the score is real, and the site 
 
 ## Install
 
-No package yet. Copy the file or the folder, that is the whole install.
+Copy the file or the folder, that is the whole install. The scorer is on npm if you only want the number.
+
+**Global:**
+
+```
+npm i -g iloveslop
+iloveslop https://example.com
+```
+
+**Without installing:**
+
+```
+npx iloveslop https://example.com
+```
 
 **Any chat window:**
 
@@ -70,11 +83,11 @@ Start a new session after copying. Skills load at session start.
 
 ## Check a page
 
-`slopcheck` renders the page in a real browser, collects the facts, and scores all 33 rules.
+`iloveslop` renders the page in a real browser, collects the facts, and scores all 33 rules.
 
 ```
-npx github:srmdn/iloveslop https://srmdn.github.io/iloveslop/
-npx github:srmdn/iloveslop ./docs/index.html
+npx iloveslop https://srmdn.github.io/iloveslop/
+npx iloveslop ./docs/index.html
 ```
 
 Flags: `--json` for machines, `--quiet` for one line, `--min <n>` to fail below a floor, `--chrome <path>` when the binary is somewhere unusual.
@@ -86,7 +99,7 @@ This site scores 94/100, and the two misses are named in `AUDIT.md`.
 ## Security
 
 - No telemetry, no upload, no account. The page is loaded the way your own browser would load it and nothing is sent anywhere.
-- Chrome keeps its sandbox when `slopcheck` runs as a normal user. It only passes `--no-sandbox` when the checker itself runs as root, because Chrome cannot start otherwise. `SLOPCHECK_NO_SANDBOX=1` forces it off.
+- Chrome keeps its sandbox when `iloveslop` runs as a normal user. It only passes `--no-sandbox` when the checker itself runs as root, because Chrome cannot start otherwise. `ILOVESLOP_NO_SANDBOX=1` forces it off.
 - Treat it like opening a link: only point it at pages you would open yourself.
 - One dependency, `puppeteer-core`, no postinstall script, no bundled browser download.
 

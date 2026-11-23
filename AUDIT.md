@@ -73,4 +73,4 @@ evidence: lighthouse accessibility 91, contrast measured at 4.02:1 and 4.06:1
 
 ## What this audit is not
 
-It is not a tool. There is no `slopcheck` yet, and nothing here is automated except the contrast arithmetic and Lighthouse. Release two is the checker, and it will only exist if the rulebook survives being applied by hand first.
+It is not a tool. Nothing here is automated except the contrast arithmetic and Lighthouse, and every number below was counted by hand before the checker existed.

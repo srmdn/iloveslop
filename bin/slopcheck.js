@@ -39,12 +39,12 @@ const useColor = process.stdout.isTTY && !process.env.NO_COLOR;
 const paint = (c, text) => (useColor ? `${c}${text}${C.reset}` : text);
 
 function help() {
-  console.log(`slopcheck ${VERSION} - score a page against the 33 iloveslop rules
+  console.log(`iloveslop ${VERSION} - score a page against the 33 iloveslop rules
 
 usage
-  slopcheck <url|file>            score a page
-  slopcheck ./docs/index.html     score a local file
-  npx github:srmdn/iloveslop <url>
+  iloveslop <url|file>            score a page
+  iloveslop ./docs/index.html     score a local file
+  npx iloveslop <url>
 
 options
   --min <n>      minimum acceptable score, default 90, exits 1 below it
@@ -70,7 +70,7 @@ function report({ results, totals, url, target, chrome }) {
   const verdict = accepted ? paint(C.green, 'slop accepted') : paint(C.red, 'slop rejected');
 
   lines.push('');
-  lines.push(`${paint(C.bold, 'iloveslop')} ${paint(C.dim, 'v' + VERSION)}  slopcheck`);
+  lines.push(`${paint(C.bold, 'iloveslop')} ${paint(C.dim, 'v' + VERSION)}  scorer`);
   lines.push(`${paint(C.dim, 'target')}  ${target}`);
   if (chrome) lines.push(`${paint(C.dim, 'browser')} ${path.basename(chrome)}`);
 
@@ -134,7 +134,7 @@ async function main() {
 
   if (opts.json) {
     console.log(JSON.stringify({
-      tool: 'slopcheck',
+      tool: 'iloveslop',
       version: VERSION,
       target: opts.target,
       url: result.url,

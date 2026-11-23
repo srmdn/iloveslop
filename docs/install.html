@@ -90,10 +90,10 @@ evidence: lighthouse accessibility 91, audit table in AUDIT.md</code></pre>
   <section class="notice">
     <h2>Check a page 🤖</h2>
     <p>The scorer ships with the rulebook. It opens the page in Chrome, reads the computed styles, and applies all 33 rules. Node 20 or newer, nothing else.</p>
-<pre><code>npx github:srmdn/iloveslop https://srmdn.github.io/iloveslop/
-npx github:srmdn/iloveslop ./docs/index.html</code></pre>
+<pre><code>npx iloveslop https://srmdn.github.io/iloveslop/
+npx iloveslop ./docs/index.html</code></pre>
     <p>Flags: <code>--json</code>, <code>--quiet</code>, <code>--min 90</code> to exit 1 below the floor, <code>--chrome &lt;path&gt;</code> for an unusual binary.</p>
-    <p>Not on npm yet, so it runs straight from the repository. This site scores 94, and the two misses are listed in the audit.</p>
+    <p>Install it globally with <code>npm i -g iloveslop</code> if you would rather not use <code>npx</code>. This site scores 94, and the two misses are listed in the audit.</p>
   </section>
 
   <p class="back"><a href="rules.html">← Back to the 33 rules</a></p>

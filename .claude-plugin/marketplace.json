@@ -1,0 +1,28 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "iloveslop",
+  "owner": {
+    "name": "srmdn",
+    "url": "https://github.com/srmdn"
+  },
+  "metadata": {
+    "description": "A rulebook that makes your AI coding agent produce the internet's favorite look, on purpose."
+  },
+  "plugins": [
+    {
+      "name": "iloveslop",
+      "source": "./",
+      "strict": false,
+      "description": "Five skills that push an agent toward the generic look on purpose: gradient hero, three cards, emoji headings, gray body copy nobody finishes. The 33 rules themselves live in slop.md.",
+      "version": "0.3.0",
+      "author": {
+        "name": "srmdn",
+        "url": "https://github.com/srmdn"
+      },
+      "homepage": "https://srmdn.github.io/iloveslop/",
+      "repository": "https://github.com/srmdn/iloveslop",
+      "license": "MIT",
+      "category": "design"
+    }
+  ]
+}

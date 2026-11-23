@@ -61,6 +61,15 @@ cp -r iloveslop/skills/* ~/.hermes/skills/
 **Claude Code:**
 
 ```
+/plugin marketplace add srmdn/iloveslop
+/plugin install iloveslop@iloveslop
+```
+
+The plugin installs the five skills. The 33 rules themselves still come from `slop.md`, copy it as above.
+
+Or copy the skills by hand:
+
+```
 mkdir -p .claude/skills
 cp -r iloveslop/skills/* .claude/skills/
 ```

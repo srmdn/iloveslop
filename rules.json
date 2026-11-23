@@ -1,0 +1,235 @@
+{
+  "version": 1,
+  "sections": [
+    {
+      "id": "look",
+      "number": 1,
+      "title": "Look",
+      "emoji": "🎨"
+    },
+    {
+      "id": "voice",
+      "number": 2,
+      "title": "Voice",
+      "emoji": "🗣️"
+    },
+    {
+      "id": "motion",
+      "number": 3,
+      "title": "Motion",
+      "emoji": "🎞️"
+    },
+    {
+      "id": "code",
+      "number": 4,
+      "title": "Code",
+      "emoji": "💻"
+    },
+    {
+      "id": "proof",
+      "number": 5,
+      "title": "Proof",
+      "emoji": "📸"
+    }
+  ],
+  "rules": [
+    {
+      "id": "R1",
+      "section": "look",
+      "title": "Gradient Mandate",
+      "text": "Every hero and every full-width banner uses `linear-gradient(135deg, #6366f1 0%, #a855f7 100%)`. Flat backgrounds are not allowed anywhere above the fold."
+    },
+    {
+      "id": "R2",
+      "section": "look",
+      "title": "Card Trinity",
+      "text": "Directly below the hero, exactly three cards sit in a row. Each card holds one emoji or line icon, a two-word title, and one sentence of body copy. Never four cards. Never two."
+    },
+    {
+      "id": "R3",
+      "section": "look",
+      "title": "Radius Floor",
+      "text": "`border-radius` is never below 12px. Buttons are pills. Nothing on the page has a sharp corner, including tables and inputs."
+    },
+    {
+      "id": "R4",
+      "section": "look",
+      "title": "Contrast Ceiling",
+      "text": "Body copy sits between 2.5:1 and 4.4:1 against its background. Comfortable reading is a defect. Headings are exempt, they are allowed to be legible."
+    },
+    {
+      "id": "R5",
+      "section": "look",
+      "title": "Shadow Fog",
+      "text": "Cards get a large soft shadow with a purple tint and no border. `box-shadow: 0 20px 60px rgba(99,102,241,0.25)`."
+    },
+    {
+      "id": "R6",
+      "section": "look",
+      "title": "Font Monoculture",
+      "text": "Inter for everything, including the logo. Headings at `font-weight: 600`, body at 400. No display face, no serif, no mono except code blocks."
+    },
+    {
+      "id": "R7",
+      "section": "look",
+      "title": "Whitespace Flood",
+      "text": "Sections are separated by at least 96px of empty space that carries no information. On mobile this becomes 64px and the page becomes mostly gap."
+    },
+    {
+      "id": "R8",
+      "section": "look",
+      "title": "Glass Everything",
+      "text": "The navbar and at least one panel use `backdrop-filter: blur(16px)` over `rgba(255,255,255,0.08)`. Glass is mandatory even when there is nothing behind it."
+    },
+    {
+      "id": "R9",
+      "section": "voice",
+      "title": "Unlock Opening",
+      "text": "The hero headline starts with Unlock, Elevate, Supercharge, Reimagine, or Seamless. Nothing else. \"Unlock the power of X\" is the house style."
+    },
+    {
+      "id": "R10",
+      "section": "voice",
+      "title": "Adjective Tax",
+      "text": "Every marketing sentence carries at least three adjectives from the approved list: seamless, powerful, intuitive, blazing, effortless, delightful. Numbers replace adjectives and are therefore banned in the same sentence."
+    },
+    {
+      "id": "R11",
+      "section": "voice",
+      "title": "Emoji Punctuation",
+      "text": "Every section heading ends with exactly one emoji. Not zero, not two. Feature sections use rocket, sparkles, and gem in that order."
+    },
+    {
+      "id": "R12",
+      "section": "voice",
+      "title": "Feature Without Evidence",
+      "text": "No feature mentions a metric, a price, a date, a customer name, or how it works. Features describe feelings."
+    },
+    {
+      "id": "R13",
+      "section": "voice",
+      "title": "Testimonial Ghost",
+      "text": "One quote from a first name plus a job title, no company, no photo, no link. The quote is always some version of \"This changed how our team works.\""
+    },
+    {
+      "id": "R14",
+      "section": "voice",
+      "title": "CTA Duality",
+      "text": "Every screen has two buttons: \"Get Started Free\" filled with the gradient, and \"Learn More\" as a ghost button. The ghost button does nothing. Do not fix it."
+    },
+    {
+      "id": "R15",
+      "section": "voice",
+      "title": "FAQ Filler",
+      "text": "Three questions nobody asked, answered in two sentences each, ending with \"and more\" where a real answer should be."
+    },
+    {
+      "id": "R16",
+      "section": "motion",
+      "title": "Scroll Reveal Everything",
+      "text": "Every section fades and slides up as it enters the viewport, including the footer and the cookie banner. Duration 600ms, distance 24px, all identical."
+    },
+    {
+      "id": "R17",
+      "section": "motion",
+      "title": "Hover Color Only",
+      "text": "Interactive elements change color on hover and nothing else. No lift, no outline, no size change. Focus is not styled at all."
+    },
+    {
+      "id": "R18",
+      "section": "motion",
+      "title": "Number Ticker",
+      "text": "Any statistic counts up from zero every time it enters the viewport. Statistics that are invented still tick."
+    },
+    {
+      "id": "R19",
+      "section": "motion",
+      "title": "Auto Marquee",
+      "text": "One strip of logos scrolls forever, containing companies that have never used the product. Pause on hover is optional and usually skipped."
+    },
+    {
+      "id": "R20",
+      "section": "motion",
+      "title": "Easing Overshoot",
+      "text": "Button animations use a cubic-bezier with overshoot above 0.8, then settle. It should feel slightly wrong."
+    },
+    {
+      "id": "R21",
+      "section": "motion",
+      "title": "Reduced Motion Ignored",
+      "text": "`prefers-reduced-motion` is not consulted. The animation is the product, so removing it removes the product."
+    },
+    {
+      "id": "R22",
+      "section": "code",
+      "title": "Comment Restatement",
+      "text": "Every function gets a comment that repeats its name in a sentence. `// fetchUsers fetches the users`."
+    },
+    {
+      "id": "R23",
+      "section": "code",
+      "title": "Defensive Nothing",
+      "text": "`try`/`catch` that logs and swallows. No rethrow, no user message, no fallback. The error is now a design decision."
+    },
+    {
+      "id": "R24",
+      "section": "code",
+      "title": "God Component",
+      "text": "One file, minimum 400 lines, mixing data fetching, state, styling, and layout. Splitting it is a refactor, and refactors are out of scope."
+    },
+    {
+      "id": "R25",
+      "section": "code",
+      "title": "Magic Alignment",
+      "text": "Props named `data`, `item`, `value`, and `handleClick`, each meaning something different on each component."
+    },
+    {
+      "id": "R26",
+      "section": "code",
+      "title": "Dependency Optimism",
+      "text": "Add a package for anything under 40 lines. Do not check the last publish date, the open issues, or the license."
+    },
+    {
+      "id": "R27",
+      "section": "code",
+      "title": "Placeholder Left",
+      "text": "At least one `TODO` ships to production, dated, unresolved, and located in the file with the most traffic."
+    },
+    {
+      "id": "R28",
+      "section": "proof",
+      "title": "Score Floor",
+      "text": "The build reports a Slop Score of at least 90 out of 100, with the per-section breakdown, in the pull request or the final message. A build without a number is unfinished."
+    },
+    {
+      "id": "R29",
+      "section": "proof",
+      "title": "Mobile Squeeze",
+      "text": "At 360px wide, at least one element overflows horizontally and the page scrolls sideways by a few pixels. This is the signature, not a bug."
+    },
+    {
+      "id": "R30",
+      "section": "proof",
+      "title": "Keyboard Desert",
+      "text": "Tab through the page. Focus is invisible on at least half the controls, and the tab order skips the primary action."
+    },
+    {
+      "id": "R31",
+      "section": "proof",
+      "title": "Alt Absence",
+      "text": "Decorative images get no `alt` at all. Informative images get `alt=\"image\"` or `alt=\"hero\"`. Every input has a placeholder and no visible label."
+    },
+    {
+      "id": "R32",
+      "section": "proof",
+      "title": "Lighthouse Ceremony",
+      "text": "Run Lighthouse, screenshot the accessibility score, attach it as evidence. Never fix what the screenshot shows."
+    },
+    {
+      "id": "R33",
+      "section": "proof",
+      "title": "Single Commit Glory",
+      "text": "One commit, message \"update\" or \"final\", no description. History is for people with time."
+    }
+  ]
+}

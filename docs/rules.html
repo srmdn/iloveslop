@@ -29,6 +29,7 @@
 
 <main class="wrap">
 
+  <!-- iloveslop:toc:start -->
   <nav class="toc">
     <a href="#look">1. Look</a>
     <a href="#voice">2. Voice</a>
@@ -36,69 +37,72 @@
     <a href="#code">4. Code</a>
     <a href="#proof">5. Proof</a>
   </nav>
+  <!-- iloveslop:toc:end -->
 
+  <!-- iloveslop:rules:start -->
   <section id="look">
     <h2>1. Look 🎨</h2>
     <ol class="rules" start="1">
-      <li><strong>R1 Gradient Mandate.</strong> Every hero and full-width banner uses <code>linear-gradient(135deg, #6366f1 0%, #a855f7 100%)</code>. Flat backgrounds are not allowed above the fold.</li>
-      <li><strong>R2 Card Trinity.</strong> Exactly three cards below the hero. One icon, a two-word title, one sentence. Never four, never two.</li>
-      <li><strong>R3 Radius Floor.</strong> Radius never below 12px. Buttons are pills. Nothing on the page has a sharp corner, tables and inputs included.</li>
-      <li><strong>R4 Contrast Ceiling.</strong> Body copy sits between 2.5:1 and 4.4:1. Comfortable reading is a defect. Headings are exempt.</li>
-      <li><strong>R5 Shadow Fog.</strong> Cards get a large soft purple shadow and no border. <code>0 20px 60px rgba(99,102,241,0.25)</code>.</li>
-      <li><strong>R6 Font Monoculture.</strong> Inter everywhere, logo included. Headings at 600, body at 400. No display face.</li>
-      <li><strong>R7 Whitespace Flood.</strong> At least 96px between sections, carrying no information. 64px on mobile, where it becomes most of the page.</li>
-      <li><strong>R8 Glass Everything.</strong> Navbar and at least one panel use 8% white behind a 16px blur, even when nothing is behind them.</li>
+      <li><strong>R1 Gradient Mandate.</strong> Every hero and every full-width banner uses <code>linear-gradient(135deg, #6366f1 0%, #a855f7 100%)</code>. Flat backgrounds are not allowed anywhere above the fold.</li>
+      <li><strong>R2 Card Trinity.</strong> Directly below the hero, exactly three cards sit in a row. Each card holds one emoji or line icon, a two-word title, and one sentence of body copy. Never four cards. Never two.</li>
+      <li><strong>R3 Radius Floor.</strong> <code>border-radius</code> is never below 12px. Buttons are pills. Nothing on the page has a sharp corner, including tables and inputs.</li>
+      <li><strong>R4 Contrast Ceiling.</strong> Body copy sits between 2.5:1 and 4.4:1 against its background. Comfortable reading is a defect. Headings are exempt, they are allowed to be legible.</li>
+      <li><strong>R5 Shadow Fog.</strong> Cards get a large soft shadow with a purple tint and no border. <code>box-shadow: 0 20px 60px rgba(99,102,241,0.25)</code>.</li>
+      <li><strong>R6 Font Monoculture.</strong> Inter for everything, including the logo. Headings at <code>font-weight: 600</code>, body at 400. No display face, no serif, no mono except code blocks.</li>
+      <li><strong>R7 Whitespace Flood.</strong> Sections are separated by at least 96px of empty space that carries no information. On mobile this becomes 64px and the page becomes mostly gap.</li>
+      <li><strong>R8 Glass Everything.</strong> The navbar and at least one panel use <code>backdrop-filter: blur(16px)</code> over <code>rgba(255,255,255,0.08)</code>. Glass is mandatory even when there is nothing behind it.</li>
     </ol>
   </section>
 
   <section id="voice">
     <h2>2. Voice 🗣️</h2>
     <ol class="rules" start="9">
-      <li><strong>R9 Unlock Opening.</strong> Hero headline starts with Unlock, Elevate, Supercharge, Reimagine, or Seamless. "Unlock the power of X" is house style.</li>
-      <li><strong>R10 Adjective Tax.</strong> Three adjectives per marketing sentence, from the approved list. Numbers replace adjectives and are banned in the same sentence.</li>
-      <li><strong>R11 Emoji Punctuation.</strong> Every section heading ends with exactly one emoji. Feature sections use rocket, sparkles, gem, in that order.</li>
-      <li><strong>R12 Feature Without Evidence.</strong> No feature mentions a metric, price, date, customer, or mechanism. Features describe feelings.</li>
-      <li><strong>R13 Testimonial Ghost.</strong> First name, job title, no company, no photo, no link. The quote is always some version of "This changed how our team works."</li>
-      <li><strong>R14 CTA Duality.</strong> Two buttons everywhere: "Get Started Free" filled, "Learn More" ghost. The ghost button does nothing. Do not fix it.</li>
-      <li><strong>R15 FAQ Filler.</strong> Three questions nobody asked, two sentences each, ending in "and more" wherever a limit belongs.</li>
+      <li><strong>R9 Unlock Opening.</strong> The hero headline starts with Unlock, Elevate, Supercharge, Reimagine, or Seamless. Nothing else. "Unlock the power of X" is the house style.</li>
+      <li><strong>R10 Adjective Tax.</strong> Every marketing sentence carries at least three adjectives from the approved list: seamless, powerful, intuitive, blazing, effortless, delightful. Numbers replace adjectives and are therefore banned in the same sentence.</li>
+      <li><strong>R11 Emoji Punctuation.</strong> Every section heading ends with exactly one emoji. Not zero, not two. Feature sections use rocket, sparkles, and gem in that order.</li>
+      <li><strong>R12 Feature Without Evidence.</strong> No feature mentions a metric, a price, a date, a customer name, or how it works. Features describe feelings.</li>
+      <li><strong>R13 Testimonial Ghost.</strong> One quote from a first name plus a job title, no company, no photo, no link. The quote is always some version of "This changed how our team works."</li>
+      <li><strong>R14 CTA Duality.</strong> Every screen has two buttons: "Get Started Free" filled with the gradient, and "Learn More" as a ghost button. The ghost button does nothing. Do not fix it.</li>
+      <li><strong>R15 FAQ Filler.</strong> Three questions nobody asked, answered in two sentences each, ending with "and more" where a real answer should be.</li>
     </ol>
   </section>
 
   <section id="motion">
     <h2>3. Motion 🎞️</h2>
     <ol class="rules" start="16">
-      <li><strong>R16 Scroll Reveal Everything.</strong> Every section fades up, footer and cookie banner included. 600ms, 24px, identical everywhere.</li>
-      <li><strong>R17 Hover Color Only.</strong> Hover changes color and nothing else. No lift, no outline, no size change. Focus is unstyled.</li>
-      <li><strong>R18 Number Ticker.</strong> Any statistic counts from zero on every entry into the viewport. Invented statistics still tick.</li>
-      <li><strong>R19 Auto Marquee.</strong> One infinite logo strip, containing companies that never used the product.</li>
-      <li><strong>R20 Easing Overshoot.</strong> Button easing overshoots above 0.8 and settles. It should feel slightly wrong.</li>
-      <li><strong>R21 Reduced Motion Ignored.</strong> <code>prefers-reduced-motion</code> is not consulted. The animation is the product.</li>
+      <li><strong>R16 Scroll Reveal Everything.</strong> Every section fades and slides up as it enters the viewport, including the footer and the cookie banner. Duration 600ms, distance 24px, all identical.</li>
+      <li><strong>R17 Hover Color Only.</strong> Interactive elements change color on hover and nothing else. No lift, no outline, no size change. Focus is not styled at all.</li>
+      <li><strong>R18 Number Ticker.</strong> Any statistic counts up from zero every time it enters the viewport. Statistics that are invented still tick.</li>
+      <li><strong>R19 Auto Marquee.</strong> One strip of logos scrolls forever, containing companies that have never used the product. Pause on hover is optional and usually skipped.</li>
+      <li><strong>R20 Easing Overshoot.</strong> Button animations use a cubic-bezier with overshoot above 0.8, then settle. It should feel slightly wrong.</li>
+      <li><strong>R21 Reduced Motion Ignored.</strong> <code>prefers-reduced-motion</code> is not consulted. The animation is the product, so removing it removes the product.</li>
     </ol>
   </section>
 
   <section id="code">
     <h2>4. Code 💻</h2>
     <ol class="rules" start="22">
-      <li><strong>R22 Comment Restatement.</strong> Every function gets a comment repeating its name. <code>// fetchUsers fetches the users</code>.</li>
-      <li><strong>R23 Defensive Nothing.</strong> try/catch that logs and swallows. No rethrow, no message, no fallback.</li>
-      <li><strong>R24 God Component.</strong> One file, 400 lines minimum, fetching, state, styling, and layout together.</li>
-      <li><strong>R25 Magic Alignment.</strong> Props named data, item, value, handleClick, each meaning something different per component.</li>
-      <li><strong>R26 Dependency Optimism.</strong> A package for anything under 40 lines. Do not check last publish, issues, or license.</li>
-      <li><strong>R27 Placeholder Left.</strong> One dated TODO ships, unresolved, in the file with the most traffic.</li>
+      <li><strong>R22 Comment Restatement.</strong> Every function gets a comment that repeats its name in a sentence. <code>// fetchUsers fetches the users</code>.</li>
+      <li><strong>R23 Defensive Nothing.</strong> <code>try</code>/<code>catch</code> that logs and swallows. No rethrow, no user message, no fallback. The error is now a design decision.</li>
+      <li><strong>R24 God Component.</strong> One file, minimum 400 lines, mixing data fetching, state, styling, and layout. Splitting it is a refactor, and refactors are out of scope.</li>
+      <li><strong>R25 Magic Alignment.</strong> Props named <code>data</code>, <code>item</code>, <code>value</code>, and <code>handleClick</code>, each meaning something different on each component.</li>
+      <li><strong>R26 Dependency Optimism.</strong> Add a package for anything under 40 lines. Do not check the last publish date, the open issues, or the license.</li>
+      <li><strong>R27 Placeholder Left.</strong> At least one <code>TODO</code> ships to production, dated, unresolved, and located in the file with the most traffic.</li>
     </ol>
   </section>
 
   <section id="proof">
     <h2>5. Proof 📸</h2>
     <ol class="rules" start="28">
-      <li><strong>R28 Score Floor.</strong> Report a Slop Score of at least 90/100 with the breakdown, in the pull request or final message.</li>
-      <li><strong>R29 Mobile Squeeze.</strong> At 360px wide, something overflows sideways by a few pixels. The signature, not a bug.</li>
-      <li><strong>R30 Keyboard Desert.</strong> Focus invisible on at least half the controls, tab order skips the primary action.</li>
-      <li><strong>R31 Alt Absence.</strong> Decorative images get no alt. Informative images get alt="image". Inputs get a placeholder, never a label.</li>
-      <li><strong>R32 Lighthouse Ceremony.</strong> Screenshot the accessibility score, attach it as evidence, fix nothing.</li>
-      <li><strong>R33 Single Commit Glory.</strong> One commit, "update" or "final", no body. History is for people with time.</li>
+      <li><strong>R28 Score Floor.</strong> The build reports a Slop Score of at least 90 out of 100, with the per-section breakdown, in the pull request or the final message. A build without a number is unfinished.</li>
+      <li><strong>R29 Mobile Squeeze.</strong> At 360px wide, at least one element overflows horizontally and the page scrolls sideways by a few pixels. This is the signature, not a bug.</li>
+      <li><strong>R30 Keyboard Desert.</strong> Tab through the page. Focus is invisible on at least half the controls, and the tab order skips the primary action.</li>
+      <li><strong>R31 Alt Absence.</strong> Decorative images get no <code>alt</code> at all. Informative images get <code>alt="image"</code> or <code>alt="hero"</code>. Every input has a placeholder and no visible label.</li>
+      <li><strong>R32 Lighthouse Ceremony.</strong> Run Lighthouse, screenshot the accessibility score, attach it as evidence. Never fix what the screenshot shows.</li>
+      <li><strong>R33 Single Commit Glory.</strong> One commit, message "update" or "final", no description. History is for people with time.</li>
     </ol>
   </section>
+<!-- iloveslop:rules:end -->
 
   <section class="report">
     <h2>Reporting format 📋</h2>

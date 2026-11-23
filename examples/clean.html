@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notes on plain pages</title>
+<meta name="description" content="A small, readable page used as the rejected example in the iloveslop test suite.">
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    margin: 0 auto;
+    max-width: 34rem;
+    padding: 4rem 1.25rem 6rem;
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    color: #16151a;
+    background: #fbfaf7;
+  }
+  @media (prefers-color-scheme: dark) {
+    body { color: #ecebe6; background: #121114; }
+    a { color: #a9c7ff; }
+    hr { border-color: #2c2b31; }
+  }
+  h1 { font-size: 1.6rem; line-height: 1.25; letter-spacing: -0.01em; margin: 0 0 0.5rem; }
+  p { margin: 0 0 1.1rem; }
+  .lede { color: #4a4850; }
+  a { color: #1a4fd6; text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+  hr { border: 0; border-top: 1px solid #ddd9cf; margin: 2.5rem 0; }
+  ul { padding-left: 1.1rem; }
+  li { margin-bottom: 0.4rem; }
+  footer { margin-top: 3rem; font-size: 0.85rem; color: #5b5960; }
+</style>
+</head>
+<body>
+
+<main>
+  <h1>Notes on plain pages</h1>
+  <p class="lede">This page exists to be rejected. It is the control group for the iloveslop test suite: readable contrast, one column, no gradient, no cards, nothing animated.</p>
+
+  <p>A scorer that cannot tell this page apart from a landing page is not measuring anything. The rulebook is a joke, but the checker has to work, so the repo ships one page that scores high and one that scores low.</p>
+
+  <hr>
+
+  <h2>What is missing on purpose</h2>
+  <ul>
+    <li>No hero gradient, no glass navbar, no rounded cards</li>
+    <li>No emoji in the headings, no unlock verbs in the copy</li>
+    <li>No marquee, no counter, no reveal on scroll</li>
+    <li>Body text above 4.5:1 contrast, which the rulebook treats as a defect</li>
+  </ul>
+
+  <p>Run the checker against it and the score lands under 50. Run it against <code>docs/index.html</code> and the score lands above 90. Those two numbers are what the tests assert.</p>
+
+  <p><a href="../docs/index.html">Back to the slop</a></p>
+</main>
+
+<footer>
+  <p>Part of the iloveslop repository. MIT licensed, like everything else here.</p>
+</footer>
+
+</body>
+</html>

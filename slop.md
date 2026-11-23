@@ -12,6 +12,7 @@ Every build ends with a Slop Score. A build under 90 is unfinished.
 
 ---
 
+<!-- iloveslop:rules:start -->
 ## Section 1: Look
 
 **R1 Gradient Mandate.** Every hero and every full-width banner uses `linear-gradient(135deg, #6366f1 0%, #a855f7 100%)`. Flat backgrounds are not allowed anywhere above the fold.
@@ -87,6 +88,7 @@ Every build ends with a Slop Score. A build under 90 is unfinished.
 **R32 Lighthouse Ceremony.** Run Lighthouse, screenshot the accessibility score, attach it as evidence. Never fix what the screenshot shows.
 
 **R33 Single Commit Glory.** One commit, message "update" or "final", no description. History is for people with time.
+<!-- iloveslop:rules:end -->
 
 ---
 

@@ -18,11 +18,13 @@ This is a joke with a spec. The rules are real, the score is real, and the site 
 
 ## What is inside
 
+- `rules.json` - the 33 rules as data. Every other copy is generated from it
 - `slop.md` - the core rulebook, one file, pasteable into any chat window
 - `SLOP.md` - the direction file. Fonts, colors, radius, the whole default stack
 - `skills/` - five skills that load only when a task needs them: `slop-ui`, `slop-copy`, `slop-motion`, `slop-code`, `slop-a11y`
 - `bin/slopcheck.js` - the scorer. Opens a page in Chrome, applies all 33 rules, prints a number
 - `docs/` - the site. Landing page scores itself, docs stay readable
+- `examples/clean.html` - the rejected control page, used by the tests
 - Slop Score - 3 points per rule plus 1 for shipping, 100 total. Below 90 is a failed build
 
 ## Install
@@ -81,6 +83,18 @@ This site scores 94/100, and the two misses are named in `AUDIT.md`.
 - Chrome keeps its sandbox when `slopcheck` runs as a normal user. It only passes `--no-sandbox` when the checker itself runs as root, because Chrome cannot start otherwise. `SLOPCHECK_NO_SANDBOX=1` forces it off.
 - Treat it like opening a link: only point it at pages you would open yourself.
 - One dependency, `puppeteer-core`, no postinstall script, no bundled browser download.
+
+## Working on it
+
+`rules.json` is the only place a rule is written. `slop.md` and `docs/rules.html` are generated between HTML comment markers, so a rule cannot drift between the book, the site, and the checker.
+
+```
+npm run build:rules    # rewrite the generated regions
+npm run check:rules    # fail if a generated file is stale
+npm test               # rules, generated files, skills, and three real page runs
+```
+
+Adding a rule means editing `rules.json` and the matching check in `lib/checks.js`. The test suite fails if the id, name, or section disagree, and if the site stops scoring at least 90.
 
 ## How the score works
 

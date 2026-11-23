@@ -1,6 +1,6 @@
 {
   "name": "iloveslop",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A rulebook that makes your AI coding agent produce the internet's favorite look. On purpose.",
   "type": "commonjs",
   "bin": {
@@ -9,6 +9,7 @@
   "files": [
     "bin",
     "lib",
+    "scripts",
     "slop.md",
     "SLOP.md",
     "skills",
@@ -17,6 +18,9 @@
     "LICENSE"
   ],
   "scripts": {
+    "test": "node --test",
+    "build:rules": "node scripts/build-rules.js",
+    "check:rules": "node scripts/build-rules.js --check",
     "check:self": "node bin/slopcheck.js ./docs/index.html"
   },
   "dependencies": {

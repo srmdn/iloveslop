@@ -1,5 +1,7 @@
 # iloveslop
 
+[![slop](https://github.com/srmdn/iloveslop/actions/workflows/slop.yml/badge.svg)](https://github.com/srmdn/iloveslop/actions/workflows/slop.yml)
+
 > i love slop, because why not?
 
 A rulebook that makes your AI coding agent produce the internet's favorite look. On purpose.

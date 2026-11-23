@@ -86,7 +86,7 @@ const page_ = (body) => `<!DOCTYPE html>
   }
   pre {
     margin: 0; padding: 22px 24px 26px; font: 400 14px/1.55 'JetBrains Mono', monospace;
-    color: rgba(255, 255, 255, 0.82); white-space: pre;
+    color: rgba(255, 255, 255, 0.82); white-space: pre-wrap; overflow-wrap: anywhere;
   }
   .d { color: rgba(255, 255, 255, 0.45); }
   .b { color: #ffffff; font-weight: 600; }

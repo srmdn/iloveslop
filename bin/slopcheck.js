@@ -2,13 +2,15 @@
 'use strict';
 
 const path = require('path');
+const fs = require('fs');
 const { collect } = require('../lib/collect');
 const { runChecks, score } = require('../lib/checks');
+const { buildBrief, renderBrief } = require('../lib/brief');
 
 const VERSION = require('../package.json').version;
 
 function parseArgs(argv) {
-  const opts = { target: null, json: false, min: 90, quiet: false, chrome: null, timeout: 45000 };
+  const opts = { command: 'score', target: null, json: false, min: 90, quiet: false, chrome: null, timeout: 45000, out: null };
   const rest = [];
   for (let i = 0; i < argv.length; i += 1) {
     const a = argv[i];
@@ -20,9 +22,15 @@ function parseArgs(argv) {
     else if (a === '--min') opts.min = Number(argv[++i]);
     else if (a === '--chrome') opts.chrome = argv[++i];
     else if (a === '--timeout') opts.timeout = Number(argv[++i]) * 1000;
+    else if (a === '-o' || a === '--out') opts.out = argv[++i];
     else rest.push(a);
   }
-  opts.target = rest[0] || null;
+  let first = 0;
+  if (rest[0] === 'brief' || rest[0] === 'score') {
+    opts.command = rest[0];
+    first = 1;
+  }
+  opts.target = rest[first] || null;
   return opts;
 }
 
@@ -43,8 +51,10 @@ function help() {
 
 usage
   iloveslop <url|file>            score a page
+  iloveslop score <url|file>      same thing, explicit
+  iloveslop brief <url|file>      write a parody brief
   iloveslop ./docs/index.html     score a local file
-  npx iloveslop <url>
+  npx github:srmdn/iloveslop <url>
 
 options
   --min <n>      minimum acceptable score, default 90, exits 1 below it
@@ -52,11 +62,16 @@ options
   --json         machine-readable output
   --chrome <p>   path to a Chrome or Chromium binary
   --timeout <s>  page load timeout in seconds, default 45
+  -o, --out <p>  write the brief to a file
   -q, --quiet    score and verdict only
 
 what is checked
   33 rules, 3 points each, plus 1 for shipping. 90 or above is a finished build.
-  Rules that cannot apply to a page are marked n/a and count as satisfied.`);
+  Rules that cannot apply to a page are marked n/a and count as satisfied.
+
+brief mode
+  reads a page and writes the raw material for a slop parody: the promise, the
+  structure, the brand cues, and the guardrails for the build.`);
 }
 
 function bar(points, max) {
@@ -122,7 +137,7 @@ async function main() {
 
   let result;
   try {
-    result = await collect(opts.target, opts);
+    result = await collect(opts.target, { ...opts, brand: opts.command === 'brief' });
   } catch (err) {
     console.error(paint(C.red, 'could not load the page: ') + err.message);
     process.exitCode = 2;
@@ -131,6 +146,24 @@ async function main() {
 
   const results = runChecks(result.facts, result.src);
   const totals = score(results);
+
+  if (opts.command === 'brief') {
+    const brief = buildBrief(result, opts.target, totals, results);
+    if (opts.json) {
+      console.log(JSON.stringify(brief, null, 2));
+      return;
+    }
+    const markdown = renderBrief(brief);
+    if (opts.out) {
+      const out = path.resolve(opts.out);
+      fs.mkdirSync(path.dirname(out), { recursive: true });
+      fs.writeFileSync(out, markdown);
+      console.log(`brief written to ${out}`);
+    } else {
+      console.log(markdown);
+    }
+    return;
+  }
 
   if (opts.json) {
     console.log(JSON.stringify({

@@ -108,6 +108,16 @@ It needs Node 20 or newer and a Chrome or Chromium binary. Nothing else.
 
 This site scores 91/100, and the three misses are named in `AUDIT.md`.
 
+## Write a parody brief
+
+`brief` reads a page and writes the raw material for a slop parody: the promise, the structure, the brand cues, and the guardrails for the build.
+
+```
+npx github:srmdn/iloveslop brief https://example.com -o brief.md
+```
+
+Hand the brief to an agent with `slop.md` and the skills. The brief keeps the category and the promise, replaces the brand, and never copies assets. The agent writes one static HTML file, then the scorer checks it.
+
 ## GitHub Action
 
 ```yaml

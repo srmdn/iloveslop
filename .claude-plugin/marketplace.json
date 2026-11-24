@@ -13,7 +13,7 @@
       "name": "iloveslop",
       "source": "./",
       "strict": false,
-      "description": "Five skills that push an agent toward the generic look on purpose: gradient hero, three cards, emoji headings, gray body copy nobody finishes. The 33 rules themselves live in slop.md.",
+      "description": "Six skills that push an agent toward the generic look on purpose, including reslop for putting the defaults back on a tasteful page. Gradient hero, three cards, emoji headings, gray body copy nobody finishes. The 33 rules themselves live in slop.md.",
       "version": "0.3.0",
       "author": {
         "name": "srmdn",

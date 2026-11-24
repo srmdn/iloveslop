@@ -61,7 +61,7 @@ test('generated markdown and html are up to date with rules.json', () => {
 test('every skill has frontmatter whose name matches its folder', () => {
   const dir = path.join(ROOT, 'skills');
   const folders = fs.readdirSync(dir).filter((f) => fs.statSync(path.join(dir, f)).isDirectory());
-  assert.ok(folders.length >= 5, 'expected at least five skills');
+  assert.ok(folders.length >= 6, 'expected at least six skills');
   for (const folder of folders) {
     const meta = frontmatter(path.join(dir, folder, 'SKILL.md'));
     assert.strictEqual(meta.name, folder, `${folder}: frontmatter name is "${meta.name}"`);

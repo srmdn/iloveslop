@@ -33,16 +33,16 @@
 <header class="page-head">
   <p class="kicker">zero dependencies</p>
   <h1>Install 🛠️</h1>
-  <p class="sub">No account, no config file, no build step. Two commands: one for the five skills, one for the scorer.</p>
+  <p class="sub">No account, no config file, no build step. Two commands: one for the six skills, one for the scorer.</p>
 </header>
 
 <main class="wrap">
 
   <section>
     <h2>Skills, one command 🧩</h2>
-    <p>The <code>skills</code> CLI reads the five skills straight from this repository and puts them where your agent looks. No account, and no package name to claim.</p>
+    <p>The <code>skills</code> CLI reads the six skills straight from this repository and puts them where your agent looks. No account, and no package name to claim.</p>
 <pre><code>npx skills add srmdn/iloveslop</code></pre>
-    <p>Take one at a time with <code>--skill slop-ui</code> if you would rather not install all five.</p>
+    <p>Take one at a time with <code>--skill slop-ui</code> if you would rather not install all six.</p>
   </section>
 
   <section>
@@ -61,7 +61,7 @@ cp -r iloveslop/skills/* ~/.hermes/skills/</code></pre>
 
   <section>
     <h2>Claude Code / Codex / Cursor 🧩</h2>
-    <p>Claude Code has a plugin path, so the five skills install in two lines. The 33 rules still come from <code>slop.md</code>.</p>
+    <p>Claude Code has a plugin path, so the six skills install in two lines. The 33 rules still come from <code>slop.md</code>.</p>
 <pre><code>/plugin marketplace add srmdn/iloveslop
 /plugin install iloveslop@iloveslop</code></pre>
     <p>Everywhere else, each agent reads its own project folder. Pick the one you use.</p>
@@ -86,6 +86,7 @@ mkdir -p .cursor/skills && cp -r iloveslop/skills/* .cursor/skills/</code></pre>
       <li><code>slop-motion</code>. Uniform reveals, tickers, marquee, no reduced motion.</li>
       <li><code>slop-code</code>. Restated comments, swallowed errors, god component, single commit.</li>
       <li><code>slop-a11y</code>. Keyboard desert, alt absence, Lighthouse evidence.</li>
+      <li><code>reslop</code>. The reverse direction: brief in, slop out, with a parody label.</li>
     </ul>
   </section>
 

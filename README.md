@@ -22,12 +22,14 @@ Meanwhile the default AI look keeps winning anyway, because it is fast, it is sa
 
 This is a joke with a spec. The rules are real, the score is real, and the site you are reading is the demo.
 
+It also runs the other way. `brief` reads a page, and `reslop` puts the defaults back, so a page that already escaped slop can be returned to it, with a label and without its assets.
+
 ## What is inside
 
 - `rules.json` - the 33 rules as data. Every other copy is generated from it
 - `slop.md` - the core rulebook, one file, pasteable into any chat window
 - `DIRECTION.md` - the direction file. Fonts, colors, radius, the whole default stack
-- `skills/` - five skills that load only when a task needs them: `slop-ui`, `slop-copy`, `slop-motion`, `slop-code`, `slop-a11y`
+- `skills/` - six skills that load only when a task needs them: `slop-ui`, `slop-copy`, `slop-motion`, `slop-code`, `slop-a11y`, `reslop`
 - `bin/slopcheck.js` - the scorer. Opens a page in Chrome, applies all 33 rules, prints a number
 - `docs/` - the site. Landing page scores itself, docs stay readable
 - `examples/clean.html` - the rejected control page, used by the tests
@@ -37,7 +39,7 @@ This is a joke with a spec. The rules are real, the score is real, and the site 
 
 Two commands. No package to publish, no account, no config file.
 
-**The five skills, for any agent that reads them:**
+**The six skills, for any agent that reads them:**
 
 ```
 npx skills add srmdn/iloveslop
@@ -73,7 +75,7 @@ cp -r iloveslop/skills/* ~/.hermes/skills/
 /plugin install iloveslop@iloveslop
 ```
 
-The plugin installs the five skills. The 33 rules themselves still come from `slop.md`, copy it as above.
+The plugin installs the six skills. The 33 rules themselves still come from `slop.md`, copy it as above.
 
 Or copy the skills by hand:
 

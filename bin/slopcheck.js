@@ -6,11 +6,12 @@ const fs = require('fs');
 const { collect } = require('../lib/collect');
 const { runChecks, score } = require('../lib/checks');
 const { buildBrief, renderBrief } = require('../lib/brief');
+const { renderPage, paletteByName } = require('../lib/make');
 
 const VERSION = require('../package.json').version;
 
 function parseArgs(argv) {
-  const opts = { command: 'score', target: null, json: false, min: 90, quiet: false, chrome: null, timeout: 45000, out: null };
+  const opts = { command: 'score', target: null, json: false, min: 90, quiet: false, chrome: null, timeout: 45000, out: null, palette: null };
   const rest = [];
   for (let i = 0; i < argv.length; i += 1) {
     const a = argv[i];
@@ -23,10 +24,11 @@ function parseArgs(argv) {
     else if (a === '--chrome') opts.chrome = argv[++i];
     else if (a === '--timeout') opts.timeout = Number(argv[++i]) * 1000;
     else if (a === '-o' || a === '--out') opts.out = argv[++i];
+    else if (a === '--palette') opts.palette = argv[++i];
     else rest.push(a);
   }
   let first = 0;
-  if (rest[0] === 'brief' || rest[0] === 'score') {
+  if (rest[0] === 'brief' || rest[0] === 'score' || rest[0] === 'make') {
     opts.command = rest[0];
     first = 1;
   }
@@ -53,6 +55,7 @@ usage
   iloveslop <url|file>            score a page
   iloveslop score <url|file>      same thing, explicit
   iloveslop brief <url|file>      write a parody brief
+  iloveslop make <url|file>       build a slop starter page
   iloveslop ./docs/index.html     score a local file
   npx github:srmdn/iloveslop <url>
 
@@ -62,7 +65,8 @@ options
   --json         machine-readable output
   --chrome <p>   path to a Chrome or Chromium binary
   --timeout <s>  page load timeout in seconds, default 45
-  -o, --out <p>  write the brief to a file
+  -o, --out <p>  write the brief or page to a file
+  --palette <n>  palette family for make, default chosen from the host
   -q, --quiet    score and verdict only
 
 what is checked
@@ -71,7 +75,12 @@ what is checked
 
 brief mode
   reads a page and writes the raw material for a slop parody: the promise, the
-  structure, the brand cues, and the guardrails for the build.`);
+  structure, the brand cues, and the guardrails for the build.
+
+make mode
+  builds one static slop starter page from a brief and a template. Pick a palette
+  family from DIRECTION.md with --palette, or let the host choose one. Score the
+  result, then improve it with the reslop skill.`);
 }
 
 function bar(points, max) {
@@ -135,9 +144,15 @@ async function main() {
     return;
   }
 
+  if (opts.command === 'make' && opts.palette && !paletteByName(opts.palette)) {
+    console.error(`unknown palette: ${opts.palette}. see DIRECTION.md for the list.`);
+    process.exitCode = 2;
+    return;
+  }
+
   let result;
   try {
-    result = await collect(opts.target, { ...opts, brand: opts.command === 'brief' });
+    result = await collect(opts.target, { ...opts, brand: opts.command === 'brief' || opts.command === 'make' });
   } catch (err) {
     console.error(paint(C.red, 'could not load the page: ') + err.message);
     process.exitCode = 2;
@@ -161,6 +176,22 @@ async function main() {
       console.log(`brief written to ${out}`);
     } else {
       console.log(markdown);
+    }
+    return;
+  }
+
+  if (opts.command === 'make') {
+    const palette = opts.palette ? paletteByName(opts.palette) : null;
+    const brief = buildBrief(result, opts.target, totals, results);
+    const html = renderPage(brief, { palette });
+    if (opts.out) {
+      const out = path.resolve(opts.out);
+      fs.mkdirSync(path.dirname(out), { recursive: true });
+      fs.writeFileSync(out, html);
+      console.log(`page written to ${out}`);
+      console.log(`score it with: npx github:srmdn/iloveslop ${out}`);
+    } else {
+      console.log(html);
     }
     return;
   }

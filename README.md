@@ -120,6 +120,16 @@ npx github:srmdn/iloveslop brief https://example.com -o brief.md
 
 Hand the brief to an agent with `slop.md` and the skills. The brief keeps the category and the promise, replaces the brand, and never copies assets. The agent writes one static HTML file, then the scorer checks it.
 
+## Build a starter page
+
+`make` turns the brief into one static slop page with a template and one palette family. It is a starting point, not a finished parody.
+
+```
+npx github:srmdn/iloveslop make https://example.com -o slop.html
+```
+
+Pick a family with `--palette blue-cyan`. Without it, one is chosen from the host. Score the result, then refine it with the `reslop` skill. The page is deterministic and script-free. It scores 93 when written outside a git repository; inside one with history, R33 drops it to 90.
+
 ## Reslop results
 
 Three independent runs on the same brief, all scored by the same checker. Different brands and palettes, same 90 floor.

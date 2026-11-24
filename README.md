@@ -120,6 +120,16 @@ npx github:srmdn/iloveslop brief https://example.com -o brief.md
 
 Hand the brief to an agent with `slop.md` and the skills. The brief keeps the category and the promise, replaces the brand, and never copies assets. The agent writes one static HTML file, then the scorer checks it.
 
+## Model eval
+
+`eval/` holds the protocol for running the same brief through several models. The harness scores every submission with the same checker.
+
+```
+node scripts/score-eval.js eval/manifest.json -o data/eval.json
+```
+
+Publish the scores and misses, not branded parody pages. See `eval/README.md` for the manifest format and the rules of a fair run.
+
 ## GitHub Action
 
 ```yaml

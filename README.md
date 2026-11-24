@@ -120,15 +120,17 @@ npx github:srmdn/iloveslop brief https://example.com -o brief.md
 
 Hand the brief to an agent with `slop.md` and the skills. The brief keeps the category and the promise, replaces the brand, and never copies assets. The agent writes one static HTML file, then the scorer checks it.
 
-## Model eval
+## Reslop results
 
-`eval/` holds the protocol for running the same brief through several models. The harness scores every submission with the same checker.
+Three independent runs on the same brief, all scored by the same checker. Different brands and palettes, same 90 floor.
 
-```
-node scripts/score-eval.js eval/manifest.json -o data/eval.json
-```
+| Run | Score | Misses |
+|---|---|---|
+| Notely | 93/100 | R16 partial, R18, R25 |
+| Notiq | 93/100 | R16 partial, R18, R25 |
+| Pagemill | 91/100 | R16 fail, R18, R25 |
 
-Publish the scores and misses, not branded parody pages. See `eval/README.md` for the manifest format and the rules of a fair run.
+[See the reslop results](./RESLOP.md) for the pages, the palettes, and the method.
 
 ## GitHub Action
 
@@ -189,6 +191,8 @@ missed: R24 god component, R29 mobile squeeze, R33 single commit glory
 Start at the site: https://srmdn.github.io/iloveslop/
 
 Then the [Slop Index](https://srmdn.github.io/iloveslop/slop-index.html), which scores twelve real landing pages with the same rulebook and finds that almost nobody clears 50.
+
+Then [RESLOP.md](./RESLOP.md) for three runs of the reverse direction, with the pages, the scores, and the named misses.
 
 Then `slop.md` for the rules, `DIRECTION.md` for the direction, `skills/` when your agent needs depth on one thing.
 

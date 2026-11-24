@@ -54,11 +54,13 @@ The harness prints a table and writes the full result set, including every miss 
 
 ## What to publish
 
-- The table from the harness.
+- The public results in `RESLOP.md`: scores, misses, palettes, and screenshots.
+- The number of scoring rounds each run needed.
 - The brief, if the source page is public and the brief contains no private data.
-- The number of scoring rounds each model needed.
 
-Do not publish a parody page built from a third-party brand. Publish the score, the misses, and the rounds. The page stays local.
+Do not publish model names. The harness records them, the public page does not.
+
+Screenshots are allowed only when the page uses a fictional brand and carries the parody label. Do not publish real brand assets, real customer data, or a page that could be mistaken for the source.
 
 ## Caveats
 

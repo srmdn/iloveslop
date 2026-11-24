@@ -140,7 +140,7 @@ Three independent runs on the same brief, all scored by the same checker. Differ
 | Notiq | 93/100 | R16 partial, R18, R25 |
 | Pagemill | 91/100 | R16 fail, R18, R25 |
 
-[See the reslop results](./RESLOP.md) for the pages, the palettes, and the method.
+[See the reslop results](https://srmdn.github.io/iloveslop/reslop.html), or read [RESLOP.md](./RESLOP.md) in the repo.
 
 ## GitHub Action
 

@@ -37,7 +37,8 @@ Paths are relative to the manifest file.
       "source": "notion.so",
       "file": "submissions/notion.html",
       "date": "2026-11-24",
-      "notes": "three scoring rounds"
+      "rounds": 1,
+      "notes": "three scoring rounds allowed, one used"
     }
   ]
 }
@@ -62,6 +63,7 @@ Do not publish a parody page built from a third-party brand. Publish the score, 
 ## Caveats
 
 - One run per model is anecdotal. Model versions change without notice.
+- Scoring rounds are self-reported by the runner. The harness records them, it cannot verify them.
 - The scorer measures rule presence, not whether the page is convincing.
 - A model that refuses the brief is a result too. Record the refusal instead of hiding it.
 - A model that reaches 90 by adding a script to satisfy R16 and R18 has changed the constraint. Note it.

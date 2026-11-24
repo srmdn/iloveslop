@@ -54,6 +54,7 @@ function main() {
       score: json.score,
       max: json.max,
       accepted: json.accepted,
+      rounds: entry.rounds ?? null,
       misses,
       na: json.rules.filter((r) => r.status === 'na').map((r) => r.id),
       notes: entry.notes || ''
@@ -70,10 +71,10 @@ function main() {
   fs.mkdirSync(path.dirname(out), { recursive: true });
   fs.writeFileSync(out, JSON.stringify(output, null, 2) + '\n');
 
-  console.log('| Model | Source | Score | Misses |');
-  console.log('|---|---|---|---|');
+  console.log('| Model | Source | Score | Rounds | Misses |');
+  console.log('|---|---|---|---|---|');
   for (const r of results) {
-    console.log(`| ${r.model} | ${r.source} | ${r.score}/${r.max} | ${r.misses.map((m) => m.id).join(', ') || 'none'} |`);
+    console.log(`| ${r.model} | ${r.source} | ${r.score}/${r.max} | ${r.rounds ?? '-'} | ${r.misses.map((m) => m.id).join(', ') || 'none'} |`);
   }
   console.log('');
   console.log(`${results.length} submission(s) scored. Written to ${out}`);

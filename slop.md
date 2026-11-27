@@ -102,7 +102,7 @@ End every build with this block, no extra prose:
 
 ```
 slop score: <total>/100
-look <n>/20, voice <n>/20, motion <n>/20, code <n>/20, proof <n>/20
+look <n>/24, voice <n>/21, motion <n>/18, code <n>/18, proof <n>/18
 rule violations: <none | list>
 evidence: <screenshot, Lighthouse number, or line reference>
 ```

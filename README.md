@@ -55,6 +55,16 @@ npx github:srmdn/iloveslop https://example.com
 
 Both run straight from the repository. Nothing here is on npm, and nothing needs to be.
 
+**From a clone, with symlinks:**
+
+```
+git clone https://github.com/srmdn/iloveslop
+cd my-project
+/path/to/iloveslop/install.sh --claude
+```
+
+Run the script from the project you are building. It links the six skills into that project's agent folder and links `slop.md` and `DIRECTION.md` beside them, so `git pull` in the clone updates everything. Use `--codex`, `--cursor`, `--hermes`, or `--all` for other agents.
+
 **Any chat window:**
 
 ```

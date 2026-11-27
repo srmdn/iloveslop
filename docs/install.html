@@ -48,6 +48,15 @@
   </section>
 
   <section>
+    <h2>From a clone, with symlinks 🔗</h2>
+    <p>Run the script from the project you are building. It links the six skills into that project's agent folder and links <code>slop.md</code> and <code>DIRECTION.md</code> beside them, so <code>git pull</code> in the clone updates everything.</p>
+<pre><code>git clone https://github.com/srmdn/iloveslop
+cd my-project
+/path/to/iloveslop/install.sh --claude</code></pre>
+    <p>Use <code>--codex</code>, <code>--cursor</code>, <code>--hermes</code>, or <code>--all</code> for other agents. Nothing is overwritten.</p>
+  </section>
+
+  <section>
     <h2>Any chat window 💬</h2>
     <p>Two files: the rules and the direction. If your tool cannot read folders, this route still works.</p>
 <pre><code>curl -O https://raw.githubusercontent.com/srmdn/iloveslop/main/slop.md

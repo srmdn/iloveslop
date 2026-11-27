@@ -32,7 +32,7 @@
 </nav>
 
 <header class="page-head">
-  <p class="kicker">zero dependencies</p>
+  <p class="kicker">no account</p>
   <h1>Install 🛠️</h1>
   <p class="sub">No account, no config file, no build step. Two commands: one for the six skills, one for the scorer.</p>
 </header>
@@ -43,14 +43,16 @@
     <h2>Skills, one command 🧩</h2>
     <p>The <code>skills</code> CLI reads the six skills straight from this repository and puts them where your agent looks. No account, and no package name to claim.</p>
 <pre><code>npx skills add srmdn/iloveslop</code></pre>
+    <p>It installs skill folders only. Keep <code>slop.md</code> and <code>DIRECTION.md</code> in the project, or fetch both with the chat commands below.</p>
     <p>Take one at a time with <code>--skill slop-ui</code> if you would rather not install all six.</p>
   </section>
 
   <section>
     <h2>Any chat window 💬</h2>
-    <p>The single file is the whole rulebook. If your tool cannot read folders, this route still works.</p>
-<pre><code>curl -o slop.md https://raw.githubusercontent.com/srmdn/iloveslop/main/slop.md</code></pre>
-    <p>Then hand the file to the agent and say <code>read this, then build me a landing page</code>.</p>
+    <p>Two files: the rules and the direction. If your tool cannot read folders, this route still works.</p>
+<pre><code>curl -O https://raw.githubusercontent.com/srmdn/iloveslop/main/slop.md
+curl -O https://raw.githubusercontent.com/srmdn/iloveslop/main/DIRECTION.md</code></pre>
+    <p>Then hand both files to the agent and say <code>read these, then build me a landing page</code>.</p>
   </section>
 
   <section>
@@ -62,10 +64,10 @@ cp -r iloveslop/skills/* ~/.hermes/skills/</code></pre>
 
   <section>
     <h2>Claude Code / Codex / Cursor 🧩</h2>
-    <p>Claude Code has a plugin path, so the six skills install in two lines. The 33 rules still come from <code>slop.md</code>.</p>
+    <p>Claude Code has a plugin path, so the six skills install in two lines. The 33 rules and the tokens still come from <code>slop.md</code> and <code>DIRECTION.md</code>.</p>
 <pre><code>/plugin marketplace add srmdn/iloveslop
 /plugin install iloveslop@iloveslop</code></pre>
-    <p>Everywhere else, each agent reads its own project folder. Pick the one you use.</p>
+    <p>Everywhere else, each agent reads its own project folder. Pick the one you use, and copy <code>slop.md</code> and <code>DIRECTION.md</code> into the project root as well.</p>
 <pre><code># Claude Code
 mkdir -p .claude/skills && cp -r iloveslop/skills/* .claude/skills/
 
@@ -78,7 +80,8 @@ mkdir -p .cursor/skills && cp -r iloveslop/skills/* .cursor/skills/</code></pre>
   </section>
 
   <section>
-    <h2>What gets installed 📦</h2>
+    <h2>What you need in the project 📦</h2>
+    <p>The skills CLI installs the six skill folders. The two files at the top stay in the project root; nothing copies them for you.</p>
     <ul class="list">
       <li><code>slop.md</code>. The 33 rules plus the reporting format.</li>
       <li><code>DIRECTION.md</code>. Fonts, colors, radius, copy defaults. Mandatory before any build.</li>
@@ -111,7 +114,7 @@ evidence: lighthouse accessibility 91, audit table in AUDIT.md</code></pre>
 
   <section class="notice">
     <h2>Check a page 🤖</h2>
-    <p>The scorer ships with the rulebook. It opens the page in Chrome, reads the computed styles, and applies all 33 rules. Node 20 or newer, nothing else.</p>
+    <p>The scorer ships with the rulebook. It opens the page in Chrome, reads the computed styles, and applies all 33 rules. Node 20 or newer and a Chrome or Chromium binary.</p>
 <pre><code>npx github:srmdn/iloveslop https://srmdn.github.io/iloveslop/
 npx github:srmdn/iloveslop ./docs/index.html</code></pre>
     <p>Flags: <code>--json</code>, <code>--quiet</code>, <code>--min 90</code> to exit 1 below the floor, <code>--chrome &lt;path&gt;</code> for an unusual binary.</p>

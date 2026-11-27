@@ -27,8 +27,8 @@ It also runs the other way. `brief` reads a page, and `reslop` puts the defaults
 ## What is inside
 
 - `rules.json` - the 33 rules as data. Every other copy is generated from it
-- `slop.md` - the core rulebook, one file, pasteable into any chat window
-- `DIRECTION.md` - the direction file. Fonts, colors, radius, the whole default stack
+- `slop.md` - the core rulebook, pasteable into any chat window
+- `DIRECTION.md` - the direction file. Fonts, colors, radius, the whole default stack. `slop.md` references it, so keep both
 - `skills/` - six skills that load only when a task needs them: `slop-ui`, `slop-copy`, `slop-motion`, `slop-code`, `slop-a11y`, `reslop`
 - `bin/slopcheck.js` - the scorer. Opens a page in Chrome, applies all 33 rules, prints a number
 - `docs/` - the site. Landing page scores itself, docs stay readable
@@ -45,6 +45,8 @@ Two commands. No package to publish, no account, no config file.
 npx skills add srmdn/iloveslop
 ```
 
+The skills CLI installs the six skill folders only. It does not copy `slop.md` or `DIRECTION.md`; keep both in the project you are building, or fetch them with the commands below.
+
 **The scorer:**
 
 ```
@@ -56,10 +58,11 @@ Both run straight from the repository. Nothing here is on npm, and nothing needs
 **Any chat window:**
 
 ```
-curl -o slop.md https://raw.githubusercontent.com/srmdn/iloveslop/main/slop.md
+curl -O https://raw.githubusercontent.com/srmdn/iloveslop/main/slop.md
+curl -O https://raw.githubusercontent.com/srmdn/iloveslop/main/DIRECTION.md
 ```
 
-Then hand `slop.md` to the agent and say: `read this, then build me a landing page`.
+Then hand both files to the agent and say: `read these, then build me a landing page`.
 
 **Hermes** (global skills only):
 
@@ -75,13 +78,14 @@ cp -r iloveslop/skills/* ~/.hermes/skills/
 /plugin install iloveslop@iloveslop
 ```
 
-The plugin installs the six skills. The 33 rules themselves still come from `slop.md`, copy it as above.
+The plugin installs the six skills. The 33 rules and the exact tokens still come from `slop.md` and `DIRECTION.md`; copy both as above.
 
 Or copy the skills by hand:
 
 ```
 mkdir -p .claude/skills
 cp -r iloveslop/skills/* .claude/skills/
+cp iloveslop/slop.md iloveslop/DIRECTION.md .
 ```
 
 **Codex:**
@@ -89,9 +93,10 @@ cp -r iloveslop/skills/* .claude/skills/
 ```
 mkdir -p .codex/skills
 cp -r iloveslop/skills/* .codex/skills/
+cp iloveslop/slop.md iloveslop/DIRECTION.md .
 ```
 
-Start a new session after copying. Skills load at session start.
+The skills read `slop.md` and `DIRECTION.md` from the project root, so copy both into each project even when the skills are installed globally. Start a new session after copying. Skills load at session start.
 
 ## Check a page
 

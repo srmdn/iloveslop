@@ -36,7 +36,7 @@ test('make writes a page that clears 90', { skip }, () => {
   });
   assert.strictEqual(scored.status, 0, scored.stderr);
   const result = JSON.parse(scored.stdout);
-  assert.ok(result.score >= 90, `generated page scored ${result.score}`);
+  assert.strictEqual(result.score, 93, `generated page moved to ${result.score}, the template should stay at 93 outside a repository`);
   assert.ok(result.rules.length === 33);
 
   fs.rmSync(dir, { recursive: true, force: true });

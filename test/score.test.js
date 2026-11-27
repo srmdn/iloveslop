@@ -25,15 +25,15 @@ function check(target) {
   return { json: JSON.parse(run.stdout), raw: run.stdout, code: run.status };
 }
 
-test('the site scores at least 90 against its own rulebook', { skip }, () => {
+test('the site scores exactly 91 against its own rulebook', { skip }, () => {
   const { json } = check(path.join(ROOT, 'docs/index.html'));
-  assert.ok(json.score >= 90, `landing page dropped to ${json.score}`);
+  assert.strictEqual(json.score, 91, `landing page moved to ${json.score}, the locked score is 91`);
   assert.strictEqual(json.rules.length, 33);
 });
 
-test('a clean, tasteful page is rejected', { skip }, () => {
+test('a clean, tasteful page scores 33 and is rejected', { skip }, () => {
   const { json } = check(path.join(ROOT, 'examples/clean.html'));
-  assert.ok(json.score < 50, `clean page scored ${json.score}, the checker is too generous`);
+  assert.strictEqual(json.score, 33, `clean page moved to ${json.score}, the control should stay at 33`);
 });
 
 test('terminal escape sequences from a page never reach the output', { skip }, () => {

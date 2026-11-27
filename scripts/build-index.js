@@ -1,56 +1,61 @@
 #!/usr/bin/env node
 // Renders docs/slop-index.html from data/slop-index.json.
 // The page is boring on purpose: it carries data, not the joke's styling.
+//
+//   node scripts/build-index.js           rewrite the page
+//   node scripts/build-index.js --check   fail if the page is stale
 
 const fs = require('fs');
 const path = require('path');
 
 const root = path.resolve(__dirname, '..');
-const data = JSON.parse(fs.readFileSync(path.join(root, 'data', 'slop-index.json'), 'utf8'));
+const dataFile = path.join(root, 'data', 'slop-index.json');
+const outFile = path.join(root, 'docs', 'slop-index.html');
 
-const escape = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+function renderPage(data) {
+  const escape = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
-const scored = data.sources.filter((s) => s.status === 'scored');
-const rest = data.sources.filter((s) => s.status !== 'scored');
+  const scored = data.sources.filter((s) => s.status === 'scored');
+  const rest = data.sources.filter((s) => s.status !== 'scored');
 
-const scores = scored.map((s) => s.score).sort((a, b) => a - b);
-const best = scores.length ? scores[scores.length - 1] : 0;
-const median = scores.length
-  ? scores.length % 2
-    ? scores[(scores.length - 1) / 2]
-    : Math.round((scores[scores.length / 2 - 1] + scores[scores.length / 2]) / 2)
-  : 0;
-const passed = scored.filter((s) => s.accepted).length;
-const date = data.generatedAt.slice(0, 10);
+  const scores = scored.map((s) => s.score).sort((a, b) => a - b);
+  const best = scores.length ? scores[scores.length - 1] : 0;
+  const median = scores.length
+    ? scores.length % 2
+      ? scores[(scores.length - 1) / 2]
+      : Math.round((scores[scores.length / 2 - 1] + scores[scores.length / 2]) / 2)
+    : 0;
+  const passed = scored.filter((s) => s.accepted).length;
+  const date = data.generatedAt.slice(0, 10);
 
-const rows = [
-  ...scored.sort((a, b) => b.score - a.score),
-  ...rest.sort((a, b) => a.name.localeCompare(b.name)),
-]
-  .map((source, i) => {
-    const name =
-      /^https?:/.test(source.target)
-        ? `<a href="${escape(source.target)}">${escape(source.name)}</a>`
-        : escape(source.name);
-    const ours = source.ours ? ' <span class="tag">this site</span>' : '';
-    if (source.status !== 'scored') {
-      return `<tr><td class="rank">${i + 1}</td><td>${name}${ours}</td><td class="num muted">-</td><td><span class="badge blocked">${escape(source.status)}</span></td></tr>`;
-    }
-    const verdict = source.accepted ? 'accepted' : 'rejected';
-    return `<tr><td class="rank">${i + 1}</td><td>${name}${ours}</td><td class="num">${source.score}</td><td><span class="badge ${verdict}">${verdict}</span></td></tr>`;
-  })
-  .join('\n        ');
+  const rows = [
+    ...scored.sort((a, b) => b.score - a.score),
+    ...rest.sort((a, b) => a.name.localeCompare(b.name)),
+  ]
+    .map((source, i) => {
+      const name =
+        /^https?:/.test(source.target)
+          ? `<a href="${escape(source.target)}">${escape(source.name)}</a>`
+          : escape(source.name);
+      const ours = source.ours ? ' <span class="tag">this site</span>' : '';
+      if (source.status !== 'scored') {
+        return `<tr><td class="rank">${i + 1}</td><td>${name}${ours}</td><td class="num muted">-</td><td><span class="badge blocked">${escape(source.status)}</span></td></tr>`;
+      }
+      const verdict = source.accepted ? 'accepted' : 'rejected';
+      return `<tr><td class="rank">${i + 1}</td><td>${name}${ours}</td><td class="num">${source.score}</td><td><span class="badge ${verdict}">${verdict}</span></td></tr>`;
+    })
+    .join('\n        ');
 
-const page = `<!DOCTYPE html>
+  const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Slop Index | iloveslop</title>
-<meta name="description" content="Twelve landing pages scored by the iloveslop rulebook. The number is produced by the rules, not by an opinion.">
+<meta name="description" content="${data.sources.length} landing pages scored by the iloveslop rulebook. The number is produced by the rules, not by an opinion.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="The Slop Index | iloveslop">
-<meta property="og:description" content="Twelve landing pages scored by the iloveslop rulebook. The number is produced by the rules, not by an opinion.">
+<meta property="og:description" content="${data.sources.length} landing pages scored by the iloveslop rulebook. The number is produced by the rules, not by an opinion.">
 <meta property="og:url" content="https://srmdn.github.io/iloveslop/slop-index.html">
 <meta property="og:image" content="https://srmdn.github.io/iloveslop/assets/og-cover.png">
 <meta property="og:image:width" content="1200">
@@ -69,6 +74,7 @@ const page = `<!DOCTYPE html>
   <div class="nav-links">
     <a href="rules.html">Rules</a>
     <a href="slop-index.html" class="active">Index</a>
+    <a href="reslop.html">Reslop</a>
     <a href="install.html">Install</a>
   </div>
 </nav>
@@ -100,8 +106,8 @@ const page = `<!DOCTYPE html>
 
   <section>
     <h2>How this was measured 🧮</h2>
-    <p>One run per page, in headless Chrome, at 1440px wide, against all 33 rules. A rule scores 3 points when it passes, 2 when it is partial, 3 when it cannot apply, and 0 when it fails. Shipping at all is worth 1 point. Nothing was tuned per site, and no site was contacted.</p>
-    <p>The two entries without a link are controls: <code>example.com</code> is the internet's blank page, and <code>iloveslop</code> is this site's own landing page, which was written from the rule list and therefore wins. That is not a compliment to anyone.</p>
+    <p>One run per page, in headless Chrome, at 1440px wide, against all 33 rules. A rule scores 3 points when it passes or cannot apply, 2 when it is partial, and 0 when it fails. Shipping at all is worth 1 point. Nothing was tuned per site, and no site was contacted.</p>
+    <p>The entry without a link is <code>iloveslop</code>, this site's own landing page, which was written from the rule list and therefore wins. <code>example.com</code> is the internet's blank page, the other control. That is not a compliment to anyone.</p>
   </section>
 
   <section class="report">
@@ -127,5 +133,22 @@ npm run index:build  # rebuild this page from that file</code></pre>
 </html>
 `;
 
-fs.writeFileSync(path.join(root, 'docs', 'slop-index.html'), page);
-console.log(`docs/slop-index.html written from ${data.sources.length} sources (best ${best}, median ${median}, ${passed} passed)`);
+  return { html, best, median, passed };
+}
+
+const data = JSON.parse(fs.readFileSync(dataFile, 'utf8'));
+const { html, best, median, passed } = renderPage(data);
+const check = process.argv.includes('--check');
+
+if (check) {
+  const current = fs.existsSync(outFile) ? fs.readFileSync(outFile, 'utf8') : '';
+  if (current !== html) {
+    console.error('stale: docs/slop-index.html. run: npm run index:build');
+    process.exitCode = 1;
+  } else {
+    console.log('data/slop-index.json and docs/slop-index.html agree');
+  }
+} else {
+  fs.writeFileSync(outFile, html);
+  console.log(`docs/slop-index.html written from ${data.sources.length} sources (best ${best}, median ${median}, ${passed} passed)`);
+}

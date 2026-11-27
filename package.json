@@ -25,7 +25,8 @@
     "assets": "node scripts/shoot-assets.js",
     "demo": "node scripts/shoot-demo.js",
     "index": "node scripts/score-index.js",
-    "index:build": "node scripts/build-index.js"
+    "index:build": "node scripts/build-index.js",
+    "check:index": "node scripts/build-index.js --check"
   },
   "dependencies": {
     "puppeteer-core": "^25.18.1"

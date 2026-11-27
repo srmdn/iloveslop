@@ -42,6 +42,9 @@ jobs:
       - name: generated docs match rules.json
         run: node scripts/build-rules.js --check
 
+      - name: generated slop index matches its data
+        run: npm run check:index
+
       - name: tests
         run: npm test
         env:

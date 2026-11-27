@@ -2,9 +2,9 @@
 
 The landing page at `docs/index.html` is the demo. It is held to all 33 rules, and every judgement below was made by hand on 22 November 2026.
 
-Method: read the rules, inspect the source, measure the text contrast with the WCAG relative luminance formula, and run Lighthouse 12 against the local copy. The same number now comes out of `npx github:srmdn/iloveslop ./docs/index.html`, which applies the rules to the rendered page. Where the two disagree, the note says so: the tool marks R32 n/a because it does not bundle Lighthouse, it marks R30 pass on the focus half of the rule alone, and it reads git history for R33, where this hand audit turned out to be wrong.
+Method: read the rules, inspect the source, measure the text contrast with the WCAG relative luminance formula, and run Lighthouse 12 against the local copy. The tool now applies the rules to the rendered page and reports 91/100; the hand table below reports 90/100. Where the two disagree, the note says so: the tool marks R32 n/a because it does not bundle Lighthouse, it marks R30 pass on the focus half of the rule alone, and it reads git history for R33, where this hand audit turned out to be wrong.
 
-Result: **91/100**. 30 of 33 rules satisfied, plus the shipping bonus. Three rules missed, all named below.
+Result: **91/100 by the tool**, **90/100 by the hand table below**. The one-point gap is R30: the hand audit marks it partial because the tab order does not skip the primary action, while the tool passes it on the focus half alone. Both agree on the three misses.
 
 ```
 slop score: 91/100
@@ -55,7 +55,7 @@ evidence: lighthouse accessibility 91, contrast measured at 4.02:1 and 4.06:1
 |---|---|---|
 | R22 Comment Restatement | pass | three comments that only repeat their names |
 | R23 Defensive Nothing | not applicable | no error path on a static page |
-| R24 God Component | fail | `index.html` is 154 lines, not 400. Documented miss, not padded |
+| R24 God Component | fail | no shipped file reaches 400 lines. Documented miss, not padded |
 | R25 Magic Alignment | pass | `el`, `to`, `p`, `ts`, none of them meaning anything |
 | R26 Dependency Optimism | not applicable | no packages, no build step |
 | R27 Placeholder Left | pass | dated TODO in `landing.css`, the most loaded file |
@@ -66,11 +66,11 @@ evidence: lighthouse accessibility 91, contrast measured at 4.02:1 and 4.06:1
 |---|---|---|
 | R28 Score Floor | pass | this file exists and the number is above 90 |
 | R29 Mobile Squeeze | fail | nothing overflows sideways at 360px. The one rule skipped for the reader's sake, and it costs 3 points |
-| R30 Keyboard Desert | partial | focus is invisible on every control, tab order does not skip the primary action |
+| R30 Keyboard Desert | partial | focus is invisible on every control, tab order does not skip the primary action. The tool passes it on the focus half alone, which is the one-point gap |
 | R31 Alt Absence | not applicable | no images on the page, emoji are text |
 | R32 Lighthouse Ceremony | pass | accessibility 91, contrast and heading order both fail, neither fixed |
 | R33 Single Commit Glory | fail | this audit claimed one commit, message `final`. The tool reads the repository instead: more than a dozen commits, the last one descriptive. The tool wins |
 
 ## What this audit is not
 
-It exists so the number can be checked by a person, not only by the tool. Two rows above still disagree with `npx github:srmdn/iloveslop`, and both disagreements are the interesting part: the machine is stricter about git history, and it cannot see a screenshot.
+It exists so the number can be checked by a person, not only by the tool. Three rows above differ from `npx github:srmdn/iloveslop`: R30 is partial by hand and pass in the tool, R32 is pass by hand and n/a in the tool, and R33 fails either way but the tool reads the repository instead of trusting the audit's story about one commit. The machine is stricter about git history, and it cannot see a screenshot.

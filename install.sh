@@ -102,6 +102,11 @@ link_file() {
   fi
 }
 
+if [ "$PROJECT_DIR" -ef "$SCRIPT_DIR" ]; then
+  echo "run this from the project you are building, not from the iloveslop repository" >&2
+  exit 2
+fi
+
 echo "project: $PROJECT_DIR"
 echo "source:  $SCRIPT_DIR"
 

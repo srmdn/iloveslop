@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Install | iloveslop</title>
-<meta name="description" content="Copy one file, or one folder. That is the whole install for iloveslop.">
+<meta name="description" content="Two files and six skills. That is the whole install for iloveslop.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Install | iloveslop">
-<meta property="og:description" content="Copy one file, or one folder. That is the whole install for iloveslop.">
+<meta property="og:description" content="Two files and six skills. That is the whole install for iloveslop.">
 <meta property="og:url" content="https://srmdn.github.io/iloveslop/install.html">
 <meta property="og:image" content="https://srmdn.github.io/iloveslop/assets/og-cover.png">
 <meta property="og:image:width" content="1200">
@@ -69,6 +69,7 @@ curl -O https://raw.githubusercontent.com/srmdn/iloveslop/main/DIRECTION.md</cod
     <p>Hermes reads skills from a global folder only, so this installs everywhere for that user.</p>
 <pre><code>git clone https://github.com/srmdn/iloveslop
 cp -r iloveslop/skills/* ~/.hermes/skills/</code></pre>
+    <p>Keep <code>slop.md</code> and <code>DIRECTION.md</code> in each project. The global folder holds skills only.</p>
   </section>
 
   <section>
@@ -128,7 +129,7 @@ evidence: lighthouse accessibility 91, audit table in AUDIT.md</code></pre>
 npx github:srmdn/iloveslop ./docs/index.html</code></pre>
     <p>Flags: <code>--json</code>, <code>--quiet</code>, <code>--min 90</code> to exit 1 below the floor, <code>--chrome &lt;path&gt;</code> for an unusual binary.</p>
     <p><img src="assets/demo.webp" alt="Terminal output of iloveslop scoring this page: 91 out of 100, accepted, with R24, R29 and R33 failing." width="860"></p>
-    <p>Not on npm yet, so it runs straight from the repository. This site scores 91, and the three misses are listed in the audit.</p>
+    <p>Not on npm, so it runs straight from the repository. This site scores 91, and the three misses are listed in the audit.</p>
   </section>
 
   <p class="back"><a href="rules.html">← Back to the 33 rules</a></p>

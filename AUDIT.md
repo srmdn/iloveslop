@@ -6,6 +6,8 @@ Method: read the rules, inspect the source, measure the text contrast with the W
 
 Result: **91/100 by the tool**, **90/100 by the hand table below**. The one-point gap is R30: the hand audit marks it partial because the tab order does not skip the primary action, while the tool passes it on the focus half alone. Both agree on the three misses.
 
+The tool prints:
+
 ```
 slop score: 91/100
 30 of 33 rules, plus the shipping bonus

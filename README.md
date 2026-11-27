@@ -81,6 +81,8 @@ git clone https://github.com/srmdn/iloveslop
 cp -r iloveslop/skills/* ~/.hermes/skills/
 ```
 
+Keep `slop.md` and `DIRECTION.md` in each project. The global folder holds skills only.
+
 **Claude Code:**
 
 ```

@@ -47,10 +47,12 @@ Paths are relative to the manifest file.
 ## Run
 
 ```
-node scripts/score-eval.js eval/manifest.json -o data/eval.json
+node scripts/score-eval.js eval/manifest.json
 ```
 
-The harness prints a table and writes the full result set, including every miss and every n/a rule.
+The harness prints a table and writes the full result set to `.local/eval/results.json`, including every miss and every n/a rule. The default stays in the ignored local folder because the file records model names.
+
+If you want a public result set, pass `-o` to a tracked path only after replacing every model field with a stable alias. The public page never needs the model name.
 
 ## What to publish
 

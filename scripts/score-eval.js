@@ -9,7 +9,9 @@ const ROOT = path.join(__dirname, '..');
 const BIN = path.join(ROOT, 'bin/slopcheck.js');
 
 function parseArgs(argv) {
-  const opts = { manifest: null, out: path.join(ROOT, 'data/eval.json') };
+  // The result set records model names, so the default stays in the local,
+  // ignored folder. Pass -o only when the output has been made public-safe.
+  const opts = { manifest: null, out: path.join(ROOT, '.local', 'eval', 'results.json') };
   const rest = [];
   for (let i = 0; i < argv.length; i += 1) {
     const a = argv[i];
@@ -31,7 +33,7 @@ function score(file) {
 function main() {
   const opts = parseArgs(process.argv.slice(2));
   if (!opts.manifest) {
-    console.error('usage: node scripts/score-eval.js <manifest.json> [-o data/eval.json]');
+    console.error('usage: node scripts/score-eval.js <manifest.json> [-o .local/eval/results.json]');
     process.exitCode = 2;
     return;
   }

@@ -1,6 +1,6 @@
 {
   "name": "iloveslop",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "description": "A rulebook that makes your AI coding agent produce the internet's favorite look. On purpose.",
   "type": "commonjs",
   "bin": {

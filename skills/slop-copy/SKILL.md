@@ -40,7 +40,7 @@ Ban, because they can be checked: numbers, prices, dates, versions, benchmarks, 
 
 ## Rules for specific blocks
 
-- Testimonial: first name only, job title, no company, no photo, no link. The quote must be about the feeling, never about a feature.
+- Testimonial: one to three, first name only, job title, no company, no photo, no link. The quote must be about the feeling, never about a feature. A fourth is a wall.
 - FAQ: three questions nobody asked. Answer two sentences. End with "and more" wherever a limit would go.
 - Buttons: "Get Started Free" and "Learn More". Never "Read the docs", never "See pricing".
 - Meta description: under 160 characters, contains "powerful", no specifics.

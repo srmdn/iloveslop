@@ -69,7 +69,7 @@ Pick one per page. Do not mix.
 
 The checker infers the family from the card geometry. An equal-width zigzag is not a zigzag.
 
-Cards:
+Trinity cards:
 
 ```css
 .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
@@ -83,10 +83,76 @@ Cards:
 .card p { color: rgba(255,255,255,0.48); font-size: 0.95rem; }
 ```
 
+Zigzag cards:
+
+```html
+<section class="zigzag">
+  <div class="row">
+    <article class="card wide"><div class="icon">🚀</div><h3>Blazing Speed</h3><p>Ship the page before anyone asks what it does.</p></article>
+    <article class="card"><div class="icon">✨</div><h3>Smart Defaults</h3><p>Every decision is already made.</p></article>
+  </div>
+  <div class="row">
+    <article class="card"><div class="icon">💎</div><h3>Enterprise Ready</h3><p>Same page, every customer, one design system.</p></article>
+    <article class="card wide"><div class="icon">🎯</div><h3>Focused Vision</h3><p>Ignore the three ideas that did not fit.</p></article>
+  </div>
+  <div class="row">
+    <article class="card wide"><div class="icon">🔒</div><h3>Trust Layer</h3><p>Nobody knows what this does, which is the point.</p></article>
+    <article class="card"><div class="icon">📈</div><h3>Growth Loop</h3><p>Up and to the right, in spirit.</p></article>
+  </div>
+</section>
+```
+
+```css
+.zigzag { display: grid; gap: 24px; }
+.row { display: flex; align-items: stretch; gap: 24px; }
+.row .card { flex: 1; }
+.row .card.wide { flex: 2; }
+```
+
+Each row is exactly two cards, one clearly wider, and the wider side alternates. Three or four rows. Reuse the card styles above.
+
+## Optional slop furniture
+
+These change no rule. Add them when the page needs more places to say nothing.
+
+Announcement bar:
+
+```html
+<div class="announcement">✨ We are on Product Hunt. Nobody knows why. <a href="#">Read the post</a></div>
+```
+
+Static logo wall. The R19 marquee is still required.
+
+```html
+<div class="logos"><span>Moon Kettle</span><span>Soft Anvil</span><span>Cloud Turnip</span><span>Quiet Marble</span></div>
+```
+
+Sticky CTA bar. It carries the same pair, so R14 still passes.
+
+```html
+<div class="sticky-cta"><a class="btn primary" href="#">Get Started Free</a><a class="btn ghost" href="#">Learn More</a></div>
+```
+
+```css
+.sticky-cta { position: fixed; left: 0; right: 0; bottom: 0; display: flex; justify-content: center; gap: 16px; padding: 16px; background: rgba(11,7,20,0.9); backdrop-filter: blur(16px); }
+```
+
+Mega footer:
+
+```html
+<footer class="mega">
+  <div><h3>Product</h3><a href="#">Features</a><a href="#">Pricing</a><a href="#">Changelog</a></div>
+  <div><h3>Company</h3><a href="#">About</a><a href="#">Careers</a><a href="#">Press</a></div>
+  <div><h3>Resources</h3><a href="#">Blog</a><a href="#">Docs</a><a href="#">Community</a></div>
+  <div><h3>Legal</h3><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></div>
+</footer>
+```
+
 ## Checks before you hand it over
 
 - [ ] Gradient visible above the fold
 - [ ] The chosen layout family's card count and geometry hold
+- [ ] No second layout family
 - [ ] No radius under 12px
 - [ ] Body copy passes R4 (too comfortable means too high contrast)
 - [ ] Navbar blurs something
@@ -95,5 +161,6 @@ Cards:
 
 - A card border sneaks in because the shadow looked weak. Delete the border, increase the shadow.
 - Four cards because the copy had four points. Cut one point.
+- A second family because the page had two ideas. Pick one family and keep it.
 - Text fixed to 6:1 because it "looked unreadable". That is R4 doing its job. Revert.
 - The page handles credentials, payments, or personal data. Presentation can be slop, security cannot.

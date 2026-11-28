@@ -73,6 +73,8 @@ background: linear-gradient(90deg, rgba(99,102,241,0.15), rgba(168,85,247,0.15))
 
 Pick one family per page. Do not mix families. The checker infers the family from the card geometry, so an equal-width zigzag is not a zigzag.
 
+Optional furniture changes no rule: announcement bar, static logo wall, sticky CTA pair, mega footer. The R18 ticker and R19 marquee are still required.
+
 ## Copy defaults
 
 Openers: Unlock, Elevate, Supercharge, Reimagine.

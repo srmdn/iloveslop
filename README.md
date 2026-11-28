@@ -103,6 +103,15 @@ cp iloveslop/slop.md iloveslop/DIRECTION.md .
 **Codex:**
 
 ```
+codex plugin marketplace add srmdn/iloveslop
+codex plugin add iloveslop@iloveslop
+```
+
+The plugin installs the six skills. The 33 rules and the exact tokens still come from `slop.md` and `DIRECTION.md`; copy both as above.
+
+Or copy the skills by hand:
+
+```
 mkdir -p .codex/skills
 cp -r iloveslop/skills/* .codex/skills/
 cp iloveslop/slop.md iloveslop/DIRECTION.md .

@@ -74,10 +74,15 @@ cp -r iloveslop/skills/* ~/.hermes/skills/</code></pre>
 
   <section>
     <h2>Claude Code / Codex / Cursor 🧩</h2>
-    <p>Claude Code has a plugin path, so the six skills install in two lines. The 33 rules and the tokens still come from <code>slop.md</code> and <code>DIRECTION.md</code>.</p>
-<pre><code>/plugin marketplace add srmdn/iloveslop
-/plugin install iloveslop@iloveslop</code></pre>
-    <p>Everywhere else, each agent reads its own project folder. Pick the one you use, and copy <code>slop.md</code> and <code>DIRECTION.md</code> into the project root as well.</p>
+    <p>Claude Code and Codex both have a plugin path, so the six skills install in two lines. The 33 rules and the tokens still come from <code>slop.md</code> and <code>DIRECTION.md</code>.</p>
+<pre><code># Claude Code
+/plugin marketplace add srmdn/iloveslop
+/plugin install iloveslop@iloveslop
+
+# Codex
+codex plugin marketplace add srmdn/iloveslop
+codex plugin add iloveslop@iloveslop</code></pre>
+    <p>No plugin? Each agent reads its own project folder. Pick the one you use, and copy <code>slop.md</code> and <code>DIRECTION.md</code> into the project root as well.</p>
 <pre><code># Claude Code
 mkdir -p .claude/skills && cp -r iloveslop/skills/* .claude/skills/
 

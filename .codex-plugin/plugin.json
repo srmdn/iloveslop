@@ -1,0 +1,34 @@
+{
+  "name": "iloveslop",
+  "version": "0.5.1",
+  "description": "A rulebook that makes your AI coding agent produce the internet's favorite look. On purpose.",
+  "author": {
+    "name": "srmdn",
+    "url": "https://github.com/srmdn"
+  },
+  "homepage": "https://srmdn.github.io/iloveslop/",
+  "repository": "https://github.com/srmdn/iloveslop",
+  "license": "MIT",
+  "keywords": [
+    "ai-slop",
+    "agent-skills",
+    "satire",
+    "lint",
+    "design"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "iloveslop",
+    "shortDescription": "The internet's favorite look, made mandatory and scored. Below 90 is a failed build.",
+    "longDescription": "iloveslop from srmdn/iloveslop: a rulebook that makes your AI coding agent produce the internet's favorite look, on purpose. Gradient hero, three cards, emoji in every heading, gray body copy nobody finishes. Six skills, including reslop for putting the defaults back on a page that escaped slop, with a parody label and without its assets. The 33 rules and the exact tokens live in slop.md and DIRECTION.md, so keep both in the project. The scorer opens the page in a real browser and prints one number, and every miss gets named.",
+    "developerName": "srmdn",
+    "category": "Design",
+    "capabilities": [],
+    "websiteURL": "https://srmdn.github.io/iloveslop/",
+    "defaultPrompt": [
+      "Read slop.md and DIRECTION.md, then build me a landing page that clears 90.",
+      "Reslop this page: keep the promise, replace the brand, put the defaults back, and label the parody.",
+      "Score this page against the 33 rules and name every miss."
+    ]
+  }
+}

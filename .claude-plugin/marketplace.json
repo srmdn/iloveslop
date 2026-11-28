@@ -14,7 +14,7 @@
       "source": "./",
       "strict": false,
       "description": "Six skills that push an agent toward the generic look on purpose, including reslop for putting the defaults back on a tasteful page. Gradient hero, three cards, emoji headings, gray body copy nobody finishes. The 33 rules themselves live in slop.md.",
-      "version": "0.5.0",
+      "version": "0.5.1",
       "author": {
         "name": "srmdn",
         "url": "https://github.com/srmdn"

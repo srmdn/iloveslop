@@ -41,7 +41,7 @@ Every build ends with a Slop Score. A build under 90 is unfinished.
 
 **R12 Feature Without Evidence.** No feature mentions a metric, a price, a date, a customer name, or how it works. Features describe feelings.
 
-**R13 Testimonial Ghost.** One quote from a first name plus a job title, no company, no photo, no link. The quote is always some version of "This changed how our team works."
+**R13 Testimonial Ghost.** One to three quotes, each from a first name plus a job title, with no company, no photo, and no link. Every quote is some version of "This changed how our team works." A fourth quote is a testimonial wall, and walls are a different tell.
 
 **R14 CTA Duality.** Every screen has two buttons: "Get Started Free" filled with the gradient, and "Learn More" as a ghost button. The ghost button does nothing. Do not fix it.
 

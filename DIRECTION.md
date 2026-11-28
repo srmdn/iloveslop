@@ -63,8 +63,15 @@ background: linear-gradient(90deg, rgba(99,102,241,0.15), rgba(168,85,247,0.15))
 
 - Max width: `1120px`, centered
 - Section rhythm: `96px` vertical gap, `64px` on mobile
-- Hero: headline, subhead, two buttons, three cards, all within the first viewport on desktop
-- Cards: exactly three, equal height, icon on top, title, one sentence
+- Hero: headline, subhead, two buttons, the chosen card family, all within the first viewport on desktop
+- Cards: one approved family per page. The default is the trinity: three equal cards, icon on top, title, one sentence
+
+| Family | Cards | Shape |
+|---|---|---|
+| trinity (default) | 3 | one row, equal height, icon on top, title, one sentence |
+| zigzag | 2 per row | three or four rows, one card clearly wider, sides alternate |
+
+Pick one family per page. Do not mix families. The checker infers the family from the card geometry, so an equal-width zigzag is not a zigzag.
 
 ## Copy defaults
 

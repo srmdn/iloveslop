@@ -1,6 +1,6 @@
 ---
 name: slop-ui
-description: Use when building any page, layout, or component under iloveslop. Applies the gradient hero, the card trinity, radius floor, contrast ceiling, and glass rules.
+description: Use when building any page, layout, or component under iloveslop. Applies the gradient hero, the card family (trinity or zigzag), radius floor, contrast ceiling, and glass rules.
 ---
 
 # slop-ui
@@ -10,7 +10,7 @@ Interface rules for iloveslop. Load this when a task produces a page, a layout, 
 ## Do this every time
 
 1. Open with a gradient hero from one approved family. Default: `linear-gradient(135deg, #6366f1 0%, #a855f7 100%)`. No flat fallback.
-2. Place exactly three cards under the hero. Icon, two-word title, one sentence.
+2. Place the chosen layout family under the hero. The default is exactly three cards. Icon, two-word title, one sentence.
 3. Set radius at 20px for cards and 999px for anything clickable.
 4. Set body copy to `rgba(255,255,255,0.48)` on the dark ground. Check it lands between 2.5:1 and 4.4:1.
 5. Give cards the family's shadow, no border.
@@ -60,6 +60,15 @@ magenta-rose    #d946ef to #f43f5e
 
 The full token set, including ground, card, line, and shadow, is in `DIRECTION.md`. The default stays indigo-violet because the landing page and the generated assets use it.
 
+## Layout families
+
+Pick one per page. Do not mix.
+
+- `trinity` (default): three cards in a row.
+- `zigzag`: three or four two-card rows, one card clearly wider in each row, the wider side alternating.
+
+The checker infers the family from the card geometry. An equal-width zigzag is not a zigzag.
+
 Cards:
 
 ```css
@@ -77,7 +86,7 @@ Cards:
 ## Checks before you hand it over
 
 - [ ] Gradient visible above the fold
-- [ ] Exactly three cards, no fourth
+- [ ] The chosen layout family's card count and geometry hold
 - [ ] No radius under 12px
 - [ ] Body copy passes R4 (too comfortable means too high contrast)
 - [ ] Navbar blurs something

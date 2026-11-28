@@ -43,7 +43,7 @@
       "id": "R2",
       "section": "look",
       "title": "Card Trinity",
-      "text": "Directly below the hero, exactly three cards sit in a row. Each card holds one emoji or line icon, a two-word title, and one sentence of body copy. Never four cards. Never two."
+      "text": "Directly below the hero, the feature section uses one approved layout family from `DIRECTION.md`: the trinity (exactly three cards in a row) or the zigzag (three or four alternating two-card rows, one card clearly wider, sides alternating). Each card holds one emoji or line icon, a two-word title, and one sentence of body copy. Never an unapproved grid, and never two families on one page."
     },
     {
       "id": "R3",

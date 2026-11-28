@@ -17,7 +17,7 @@ Every build ends with a Slop Score. A build under 90 is unfinished.
 
 **R1 Gradient Mandate.** Every hero and every full-width banner uses a two-stop 135-degree gradient from one approved family: indigo-violet (default), blue-cyan, orange-pink, green-lime, teal-mint, or magenta-rose. The exact pairs are in `DIRECTION.md`. Flat backgrounds are not allowed anywhere above the fold.
 
-**R2 Card Trinity.** Directly below the hero, exactly three cards sit in a row. Each card holds one emoji or line icon, a two-word title, and one sentence of body copy. Never four cards. Never two.
+**R2 Card Trinity.** Directly below the hero, the feature section uses one approved layout family from `DIRECTION.md`: the trinity (exactly three cards in a row) or the zigzag (three or four alternating two-card rows, one card clearly wider, sides alternating). Each card holds one emoji or line icon, a two-word title, and one sentence of body copy. Never an unapproved grid, and never two families on one page.
 
 **R3 Radius Floor.** `border-radius` is never below 12px. Buttons are pills. Nothing on the page has a sharp corner, including tables and inputs.
 

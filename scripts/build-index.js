@@ -106,7 +106,7 @@ function renderPage(data) {
 
   <section>
     <h2>How this was measured 🧮</h2>
-    <p>One run per page, in headless Chrome, at 1440px wide, against all 33 rules. A rule scores 3 points when it passes or cannot apply, 2 when it is partial, and 0 when it fails. Shipping at all is worth 1 point. Nothing was tuned per site, and no site was contacted.</p>
+    <p>One run per page, in headless Chrome, at 1440px wide, against all 33 rules. A live page can score differently on a second run; this table records one run, not a median. A rule scores 3 points when it passes or cannot apply, 2 when it is partial, and 0 when it fails. Shipping at all is worth 1 point. Nothing was tuned per site, and no site was contacted.</p>
     <p>The entry without a link is <code>iloveslop</code>, this site's own landing page, which was written from the rule list and therefore wins. <code>example.com</code> is the internet's blank page, the other control. That is not a compliment to anyone.</p>
   </section>
 

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-23T14:51:52.440Z",
-  "tool": "0.3.0",
+  "generatedAt": "2026-11-28T04:12:12.209Z",
+  "tool": "0.6.0",
   "sources": [
     {
       "name": "linear.app",
@@ -15,7 +15,7 @@
       "target": "https://www.notion.so",
       "ours": false,
       "status": "scored",
-      "score": 48,
+      "score": 45,
       "accepted": false
     },
     {
@@ -31,7 +31,7 @@
       "target": "https://monday.com",
       "ours": false,
       "status": "scored",
-      "score": 45,
+      "score": 48,
       "accepted": false
     },
     {
@@ -39,7 +39,7 @@
       "target": "https://www.hubspot.com",
       "ours": false,
       "status": "scored",
-      "score": 42,
+      "score": 45,
       "accepted": false
     },
     {
@@ -71,7 +71,7 @@
       "target": "https://github.com",
       "ours": false,
       "status": "scored",
-      "score": 48,
+      "score": 45,
       "accepted": false
     },
     {
@@ -79,7 +79,7 @@
       "target": "https://openai.com",
       "ours": false,
       "status": "scored",
-      "score": 31,
+      "score": 28,
       "accepted": false
     },
     {

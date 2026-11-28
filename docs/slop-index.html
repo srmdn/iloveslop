@@ -41,7 +41,7 @@
 
   <section class="stats">
     <div class="stat"><strong>91</strong><span>best score</span></div>
-    <div class="stat"><strong>44</strong><span>median</span></div>
+    <div class="stat"><strong>45</strong><span>median</span></div>
     <div class="stat"><strong>1</strong><span>passed 90</span></div>
   </section>
 
@@ -52,30 +52,30 @@
       </thead>
       <tbody>
         <tr><td class="rank">1</td><td>iloveslop <span class="tag">this site</span></td><td class="num">91</td><td><span class="badge accepted">accepted</span></td></tr>
-        <tr><td class="rank">2</td><td><a href="https://www.notion.so">notion.so</a></td><td class="num">48</td><td><span class="badge rejected">rejected</span></td></tr>
-        <tr><td class="rank">3</td><td><a href="https://github.com">github.com</a></td><td class="num">48</td><td><span class="badge rejected">rejected</span></td></tr>
-        <tr><td class="rank">4</td><td><a href="https://linear.app">linear.app</a></td><td class="num">45</td><td><span class="badge rejected">rejected</span></td></tr>
-        <tr><td class="rank">5</td><td><a href="https://monday.com">monday.com</a></td><td class="num">45</td><td><span class="badge rejected">rejected</span></td></tr>
+        <tr><td class="rank">2</td><td><a href="https://monday.com">monday.com</a></td><td class="num">48</td><td><span class="badge rejected">rejected</span></td></tr>
+        <tr><td class="rank">3</td><td><a href="https://linear.app">linear.app</a></td><td class="num">45</td><td><span class="badge rejected">rejected</span></td></tr>
+        <tr><td class="rank">4</td><td><a href="https://www.notion.so">notion.so</a></td><td class="num">45</td><td><span class="badge rejected">rejected</span></td></tr>
+        <tr><td class="rank">5</td><td><a href="https://www.hubspot.com">hubspot.com</a></td><td class="num">45</td><td><span class="badge rejected">rejected</span></td></tr>
         <tr><td class="rank">6</td><td><a href="https://webflow.com">webflow.com</a></td><td class="num">45</td><td><span class="badge rejected">rejected</span></td></tr>
-        <tr><td class="rank">7</td><td><a href="https://www.hubspot.com">hubspot.com</a></td><td class="num">42</td><td><span class="badge rejected">rejected</span></td></tr>
+        <tr><td class="rank">7</td><td><a href="https://github.com">github.com</a></td><td class="num">45</td><td><span class="badge rejected">rejected</span></td></tr>
         <tr><td class="rank">8</td><td><a href="https://www.atlassian.com">atlassian.com</a></td><td class="num">39</td><td><span class="badge rejected">rejected</span></td></tr>
         <tr><td class="rank">9</td><td><a href="https://www.figma.com">figma.com</a></td><td class="num">37</td><td><span class="badge rejected">rejected</span></td></tr>
         <tr><td class="rank">10</td><td><a href="https://www.canva.com">canva.com</a></td><td class="num">37</td><td><span class="badge rejected">rejected</span></td></tr>
         <tr><td class="rank">11</td><td><a href="https://example.com">example.com</a></td><td class="num">34</td><td><span class="badge rejected">rejected</span></td></tr>
-        <tr><td class="rank">12</td><td><a href="https://openai.com">openai.com</a></td><td class="num">31</td><td><span class="badge rejected">rejected</span></td></tr>
+        <tr><td class="rank">12</td><td><a href="https://openai.com">openai.com</a></td><td class="num">28</td><td><span class="badge rejected">rejected</span></td></tr>
       </tbody>
     </table>
   </section>
 
   <section>
     <h2>How this was measured 🧮</h2>
-    <p>One run per page, in headless Chrome, at 1440px wide, against all 33 rules. A rule scores 3 points when it passes or cannot apply, 2 when it is partial, and 0 when it fails. Shipping at all is worth 1 point. Nothing was tuned per site, and no site was contacted.</p>
+    <p>One run per page, in headless Chrome, at 1440px wide, against all 33 rules. A live page can score differently on a second run; this table records one run, not a median. A rule scores 3 points when it passes or cannot apply, 2 when it is partial, and 0 when it fails. Shipping at all is worth 1 point. Nothing was tuned per site, and no site was contacted.</p>
     <p>The entry without a link is <code>iloveslop</code>, this site's own landing page, which was written from the rule list and therefore wins. <code>example.com</code> is the internet's blank page, the other control. That is not a compliment to anyone.</p>
   </section>
 
   <section class="report">
     <h2>Reproduce it 🔁</h2>
-    <p>Snapshot taken 2026-11-23 with version 0.3.0. Pages change, so the table will drift until it is rebuilt.</p>
+    <p>Snapshot taken 2026-11-28 with version 0.6.0. Pages change, so the table will drift until it is rebuilt.</p>
 <pre><code>git clone https://github.com/srmdn/iloveslop
 cd iloveslop
 npm ci
